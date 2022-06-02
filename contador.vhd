@@ -1,13 +1,13 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity contadorAssincronoFFsJK is
+entity contador is
   port (clk : in std_logic;
         count: out std_logic_vector(2 downto 0));
- end contadorAssincronoFFsJK;
+ end contador;
 
 
-architecture cont_arch of contadorAssincronoFFsJK is  
+architecture cont_arch of contador is  
 component flipflopjk
     port(
     clk,J,K : in std_logic;

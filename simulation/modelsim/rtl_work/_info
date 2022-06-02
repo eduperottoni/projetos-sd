@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/fernanda/SistemasDigitais/grupo01/projetos-sd/simulation/modelsim
+Econtadorassincronoffsjk
+Z1 w1654116296
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 d/home/fernanda/SistemasDigitais/grupo01/projetos-sd/simulation/modelsim
+Z5 8/home/fernanda/SistemasDigitais/grupo01/projetos-sd/contadorAssincronoFFsJK.vhd
+Z6 F/home/fernanda/SistemasDigitais/grupo01/projetos-sd/contadorAssincronoFFsJK.vhd
+l0
+L4
+VeE9kb8TIM?CnH[6mdO9>d0
+!s100 b3G7^NJ9kzk:H3E<lg0Ie1
+Z7 OV;C;10.1d;51
+31
+!i10b 1
+Z8 !s108 1654129804.876446
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/fernanda/SistemasDigitais/grupo01/projetos-sd/contadorAssincronoFFsJK.vhd|
+Z10 !s107 /home/fernanda/SistemasDigitais/grupo01/projetos-sd/contadorAssincronoFFsJK.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+Acont_arch
+R2
+R3
+DEx4 work 23 contadorassincronoffsjk 0 22 eE9kb8TIM?CnH[6mdO9>d0
+l19
+L10
+VoD6mTP[j@>=h]OoV1LFE_1
+!s100 [fJoPRkb]aJc_mPE>Dd1a1
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12
+Eflipflopjk
+Z13 w1654116450
+R2
+R3
+R4
+Z14 8/home/fernanda/SistemasDigitais/grupo01/projetos-sd/fliflopjk.vhd
+Z15 F/home/fernanda/SistemasDigitais/grupo01/projetos-sd/fliflopjk.vhd
+l0
+L4
+Voml<O3fAHFX_?[dcS<`kP0
+R7
+31
+Z16 !s108 1654129804.858522
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/fernanda/SistemasDigitais/grupo01/projetos-sd/fliflopjk.vhd|
+Z18 !s107 /home/fernanda/SistemasDigitais/grupo01/projetos-sd/fliflopjk.vhd|
+R11
+R12
+!s100 0aX^E4IGODgi8L]NU[_693
+!i10b 1
+Affjk_arch
+R2
+R3
+DEx4 work 10 flipflopjk 0 22 oml<O3fAHFX_?[dcS<`kP0
+l13
+L10
+V0mICKENDOMfaJ`4B<m;MO1
+R7
+31
+R16
+R17
+R18
+R11
+R12
+!s100 6MfLG9<M]<gnE2o3W@jJn2
+!i10b 1

@@ -1,0 +1,88 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/fernanda/SistemasDigitais/grupo01/projetos-sd/simulation/modelsim
+Econtador
+Z1 w1654131193
+Z2 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
+Z3 DPx9 cycloneii 19 cycloneii_atom_pack 0 22 zUjlM<IUJVWSWg:L2<>ic3
+Z4 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 DPx9 cycloneii 20 cycloneii_components 0 22 h@gSJ;Al32oYg[7^PbnAR0
+Z8 d/home/fernanda/SistemasDigitais/grupo01/projetos-sd/simulation/modelsim
+Z9 8contadorAssincronoFFsJK.vho
+Z10 FcontadorAssincronoFFsJK.vho
+l0
+L34
+V^17e3LeWZM5AWN[d9^Om_2
+Z11 OV;C;10.1d;51
+31
+Z12 !s108 1654131251.883967
+Z13 !s90 -reportprogress|300|-93|-work|work|contadorAssincronoFFsJK.vho|
+Z14 !s107 contadorAssincronoFFsJK.vho|
+Z15 o-93 -work work -O0
+Z16 tExplicit 1
+!s100 RXNFZ;VD4ZFl0jEPj1XGa0
+!i10b 1
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+Z17 DEx4 work 8 contador 0 22 ^17e3LeWZM5AWN[d9^Om_2
+l70
+L48
+V26;S2?Z:jon?@_fJFm>3k0
+R11
+31
+R12
+R13
+R14
+R15
+R16
+!s100 cL]52GOBm0JJcIL:NCmO_1
+!i10b 1
+Etestbench
+Z18 w1654130040
+R5
+R6
+R8
+Z19 8/home/fernanda/SistemasDigitais/grupo01/projetos-sd/testbench.vhd
+Z20 F/home/fernanda/SistemasDigitais/grupo01/projetos-sd/testbench.vhd
+l0
+L5
+VdgXAj81k^bEg;Z5;8IGI71
+!s100 iZi7M4cJ<@X84V^`]>:_a3
+R11
+31
+!i10b 1
+Z21 !s108 1654131251.910762
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/fernanda/SistemasDigitais/grupo01/projetos-sd/testbench.vhd|
+Z23 !s107 /home/fernanda/SistemasDigitais/grupo01/projetos-sd/testbench.vhd|
+R15
+R16
+Atb
+R2
+R3
+R4
+R7
+R17
+R5
+R6
+DEx4 work 9 testbench 0 22 dgXAj81k^bEg;Z5;8IGI71
+l12
+L8
+VFDzUeTBI]:MDKieXKfZ@B3
+!s100 ?]`j>9RA]Oi@@:JOiRe6[0
+R11
+31
+!i10b 1
+R21
+R22
+R23
+R15
+R16
