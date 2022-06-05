@@ -1,4 +1,4 @@
-### Projetos de Sistemas digitais | Grupo 01 
+# Projetos de Sistemas digitais | Grupo 01 
 
 ## Equipe:
 
