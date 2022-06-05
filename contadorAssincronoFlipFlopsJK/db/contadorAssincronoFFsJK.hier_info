@@ -1,0 +1,43 @@
+|contador
+clk => flipflopjk:ff0.clk
+count[0] <= flipflopjk:ff0.Q
+count[1] <= flipflopjk:ff1.Q
+count[2] <= flipflopjk:ff2.Q
+
+
+|contador|flipflopjk:ff0
+clk => qout.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+Q <= qout.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= qout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|flipflopjk:ff1
+clk => qout.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+Q <= qout.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= qout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|flipflopjk:ff2
+clk => qout.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+Q <= qout.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= qout.DB_MAX_OUTPUT_PORT_TYPE
+
+

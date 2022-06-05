@@ -1,0 +1,88 @@
+# ERROR: No extended dataflow license exists
+# do contadorAssincronoFFsJK_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying /home/fernanda/quartus/modelsim_ase/linux/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /home/fernanda/quartus/modelsim_ase/linux/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {contadorAssincronoFFsJK.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity contador
+# -- Compiling architecture structure of contador
+# 
+# vcom -93 -work work {/home/fernanda/SistemasDigitais/grupo01/projetos-sd/testbench.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity testbench
+# -- Compiling architecture tb of testbench
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Loading entity contador
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /test=contadorAssincronoFFsJK_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  testbench
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /test=contadorAssincronoFFsJK_vhd.sdo -t 1ps testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.testbench(tb)
+# Loading work.contador(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading instances from contadorAssincronoFFsJK_vhd.sdo
+# ** Error: (vsim-SDF-3250) contadorAssincronoFFsJK_vhd.sdo(0): Failed to find INSTANCE '/test'.
+# ** Error: (vsim-SDF-3894) : Errors occured in reading and resolving instances from compiled SDF file(s).
+# ** Error: (vsim-SDF-3250) contadorAssincronoFFsJK_vhd.sdo(0): Failed to find INSTANCE '/test'.
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./contadorAssincronoFFsJK_run_msim_gate_vhdl.do PAUSED at line 12
+vsim work.testbench
+# vsim work.testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.testbench(tb)
+# Loading work.contador(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+add wave -position end  sim:/testbench/clk
+add wave -position end  sim:/testbench/count
+run -all
+# ** Error: teste falhou no 5° ciclo, mas ele deveria falhar mesmo
+#    Time: 180 ns  Iteration: 0  Instance: /testbench
