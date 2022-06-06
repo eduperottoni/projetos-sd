@@ -15,4 +15,4 @@ A frequência utilizada pelo projeto foi de 1000.0MHz em cada um dos clock, esse
 
 No testbench foram criados 5 testes, em cada um deles o clock é ativado por 20 ns, testado o resultado (count) com o assert, reportado caso o teste não passe e, por fim, o clock é desativado por 20 ns. Nos 4 primeiros testes o contador deve passar sem nenhum erro, já o último teste foi criado para que o contador não passe, ou seja, o report deve aparecer. Os resultados em forma de onda e o report do último teste pode se ver nos resultados gerados pelo Quartus na figura 5.
 
-
+![all text](https://github.com/eduperottoni/projetos-sd/blob/main/contadorAssincronoFlipFlopsJK/img/simulacaoOndaTestbench.png)
