@@ -15,7 +15,7 @@ Ao final de cada clock concatena-se as saídas dos flip-flops e inverte-se a ord
 Para esse projeto utilizou-se a hierarquização de projeto com VHDL, da seguinte forma:
 
 **Figura 2.** Hierarquia do circuito contador assíncrono.
-![figura 2]()
+![figura 2](https://github.com/eduperottoni/projetos-sd/blob/main/contadorAssincronoFlipFlopsJK/img/hierarquia.png?raw=true)
 
 **Fonte:** autores.
 
@@ -24,7 +24,7 @@ Para esse projeto utilizou-se a hierarquização de projeto com VHDL, da seguint
 O circuito gerado a partir do RTL Viewer está representado na figura 3.
 
 **Figura 3.** Circuito.
-![figura 3](https://github.com/eduperottoni/projetos-sd/blob/main/contadorAssincronoFlipFlopsJK/img/hierarquia.png?raw=true)
+![figura 3](https://github.com/eduperottoni/projetos-sd/blob/main/contadorAssincronoFlipFlopsJK/img/circuitoRTLViewer.jpeg?raw=true)
 
 **Fonte:** autores.
 
