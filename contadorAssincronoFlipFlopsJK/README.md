@@ -11,7 +11,7 @@ Para esse projeto utilizou-se a hierarquização de projeto com VHDL, da seguint
 
 ### Figura 2.
 Hierarquia do circuito contador assíncrono.
-![all text](https://github.com/eduperottoni/projetos-sd/blob/main/contadorAssincronoFlipFlopsJK/img/simulacaoOndaTestbench.png)
+![all text](https://github.com/eduperottoni/projetos-sd/blob/main/contadorAssincronoFlipFlopsJK/img/hierarquia.png?raw=true)
 
 ## Resultados:
 
