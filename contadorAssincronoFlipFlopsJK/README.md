@@ -6,6 +6,13 @@ Os contadores assíncronos são contadores binários construídos a partir do en
 Este circuito é assíncrono, pois os pulsos do clock são aplicados apenas na entrada do primeiro flip-flop. A saída do primeiro flip-flop está conectada à entrada de clock do segundo flip-flop, e assim por diante.
 Ao final de cada clock concatena-se as saídas dos flip-flops e inverte-se a ordem, pois o bit mais significativo representa a saída do último flip-flop. Ao final obtém-se a contagem de 0 até 7 (3 bits).
 
+## Hierarquia:
+Para esse projeto utilizou-se a hierarquização de projeto com VHDL, da seguinte forma:
+
+### Figura 2.
+Hierarquia do circuito contador assíncrono.
+![all text](https://github.com/eduperottoni/projetos-sd/blob/main/contadorAssincronoFlipFlopsJK/img/simulacaoOndaTestbench.png)
+
 ## Resultados:
 
 A frequência utilizada pelo projeto foi de 1000.0MHz em cada um dos clock, esses resultados podem ser visualizados na figura 4.1. Para a implementação do projeto foram utilizados 3 elementos lógicos e 3 registradores, como pode se ver nos resultados gerados pelo Quartus na figura 4.2.
