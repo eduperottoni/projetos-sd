@@ -42,9 +42,9 @@ BEGIN
 				WHEN S3 =>
 					state <= S4;
 				WHEN S4 => 
-					state <= S2
+					state <= S2;
 				WHEN S5 =>
-					state <= S0
+					state <= S0;
 			END CASE;
 		END IF;
 	END PROCESS;
@@ -71,7 +71,7 @@ BEGIN
 			WHEN S4 =>
 				CP <= '0';
 				dec <= '1';
-				CA <= '1'
+				CA <= '1';
 			WHEN S5 => 
 				pronto <= '1';
 		END CASE;

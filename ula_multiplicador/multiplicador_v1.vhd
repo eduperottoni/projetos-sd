@@ -10,8 +10,7 @@ entity multiplicador_v1 is
 		inicio, reset, ck: in std_logic;
 		entA, entB: in std_logic_vector(N-1 downto 0); 
 		saida: out std_logic_vector(N-1 downto 0);
-		pronto: out std_logic;
-	);
+		pronto: out std_logic);
 end multiplicador_v1;
 
 architecture behavior of multiplicador_v1 is
@@ -33,6 +32,6 @@ architecture behavior of multiplicador_v1 is
 	end component;
 	
 begin
-	bc port map (reset, ck, inicio, Az, Bz, pronto, ini, CA, dec, CP);
-	bo port map (ck, ini, CP, CA, dec, entA, entB, Az, Bz, saida, );
+	bloco_controle: bc port map(reset, ck, inicio, Az, Bz, pronto, ini, CA, dec, CP);
+	bloco_operativo: bo port map(ck, ini, CP, CA, dec, entA, entB, Az, Bz, saida );
 end behavior;

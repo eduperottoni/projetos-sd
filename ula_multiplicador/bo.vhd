@@ -27,7 +27,7 @@ ARCHITECTURE estrutura OF bo IS
 	END COMPONENT;
 	
 	COMPONENT registrador IS
-		GENERIC (N: natural := 4)
+		GENERIC (N: natural := 4);
 		PORT (clk, carga : IN STD_LOGIC;
 			  d : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 			  q : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0));
@@ -35,14 +35,14 @@ ARCHITECTURE estrutura OF bo IS
 
 	
 	COMPONENT mux2para1 IS
-		GENERIC (N: natural := 4)
+		GENERIC (N: natural := 4);
 		PORT ( a, b : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 				sel: IN STD_LOGIC;
 				y : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0));
 	END COMPONENT ;
 
 	COMPONENT somadorsubtrator IS
-		GENERIC (N: natural := 4)
+		GENERIC (N: natural := 4);
 		PORT (a, b : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 				op: IN STD_LOGIC;
 				s : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0));
@@ -57,17 +57,29 @@ ARCHITECTURE estrutura OF bo IS
 	SIGNAL saimux1, saimux2, saimux3, sairegP, sairegA, sairegB, saisomasub: STD_LOGIC_VECTOR (3 DOWNTO 0);
 
 BEGIN
-	mux1: mux2para1 PORT MAP (RESULTADO_SOMA/SUB, entA, ini, );
-	regP: registrador_r
-		GENERIC MAP (N);
-		PORT MAP (clk, ini, CP, RESULTADO_SOMA/SUB);
-	regA: registrador PORT MAP ( );
-	regB: registrador PORT MAP (  );
-	mux2: mux2para1 PORT MAP (   );	
-	mux3: mux2para1 PORT MAP (   );
-	somasub: somadorsubtrator PORT MAP ();
-	geraAz: igualazero PORT MAP (  );
-	geraBz: igualazero PORT MAP (  );	
+	mux1: mux2para1 GENERIC MAP(N)
+		PORT MAP(saisomasub, entA, ini, saimux1);
+	regP: registrador_r GENERIC MAP(N)
+		PORT MAP(clk, ini, CP, saisomasub,sairegP);
+	regA: registrador GENERIC MAP(N)
+		PORT MAP(clk, CA, saimux1,sairegA);
+	regB: registrador GENERIC MAP(N)
+		PORT MAP(clk, ini, entB,sairegB);
+	mux2: mux2para1
+		GENERIC MAP(N)
+		PORT MAP(sairegP, sairegA, dec, saimux2);	
+	mux3: mux2para1
+	   GENERIC MAP(N)
+		PORT MAP(sairegB, "0001", dec, saimux3);
+	somasub: somadorsubtrator
+		GENERIC MAP(N)
+		PORT MAP(saimux2, saimux3, dec, saisomasub);
+	geraAz: igualazero
+		GENERIC MAP(N)
+		PORT MAP(sairegA, Az);
+	geraBz: igualazero
+		GENERIC MAP(N)
+		PORT MAP(sairegB, Bz);	
 	
 	saida <= sairegP;
 	conteudoA <= sairegA;
