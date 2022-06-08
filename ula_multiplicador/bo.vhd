@@ -27,10 +27,12 @@ ARCHITECTURE estrutura OF bo IS
 	END COMPONENT;
 	
 	COMPONENT registrador IS
+		GENERIC (N: natural := 4)
 		PORT (clk, carga : IN STD_LOGIC;
-			  d : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-			  q : OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
+			  d : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+			  q : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0));
 	END COMPONENT;
+
 	
 	COMPONENT mux2para1 IS
 		GENERIC (N: natural := 4)
@@ -39,16 +41,17 @@ ARCHITECTURE estrutura OF bo IS
 				y : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0));
 	END COMPONENT ;
 
-	
 	COMPONENT somadorsubtrator IS
-	PORT (a, b : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-		  op: IN STD_LOGIC;
-		  s : OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
+		GENERIC (N: natural := 4)
+		PORT (a, b : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+				op: IN STD_LOGIC;
+				s : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0));
 	END COMPONENT;
 	
-    COMPONENT igualazero IS
-	PORT (a : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-          igual : OUT STD_LOGIC);
+	COMPONENT igualazero IS
+		GENERIC (N: natural := 4);
+		PORT (a : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+		igual : OUT STD_LOGIC);
 	END COMPONENT;
 		
 	SIGNAL saimux1, saimux2, saimux3, sairegP, sairegA, sairegB, saisomasub: STD_LOGIC_VECTOR (3 DOWNTO 0);
