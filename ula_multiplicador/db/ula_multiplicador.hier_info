@@ -1,0 +1,32 @@
+|bc_multiplicador
+Reset => state~4.DATAIN
+clk => state~2.DATAIN
+inicio => state.DATAB
+inicio => Selector3.IN2
+Az => process_0.IN0
+Bz => process_0.IN1
+multZ => Selector7.IN3
+multZ => Selector6.IN3
+multiplicadorM => state.DATAB
+multiplicadorM => Selector6.IN2
+multiplicador => ~NO_FANOUT~
+Abit => process_0.IN0
+Bbit => process_0.IN1
+pronto <= pronto$latch.DB_MAX_OUTPUT_PORT_TYPE
+ini <= ini$latch.DB_MAX_OUTPUT_PORT_TYPE
+mM <= mM$latch.DB_MAX_OUTPUT_PORT_TYPE
+mMul <= mMul$latch.DB_MAX_OUTPUT_PORT_TYPE
+mP <= mP$latch.DB_MAX_OUTPUT_PORT_TYPE
+mB <= pronto.DB_MAX_OUTPUT_PORT_TYPE
+mMultiplicador <= mMultiplicador$latch.DB_MAX_OUTPUT_PORT_TYPE
+cSaida <= cSaida$latch.DB_MAX_OUTPUT_PORT_TYPE
+cMultiplicando <= cMultiplicando$latch.DB_MAX_OUTPUT_PORT_TYPE
+cMultiplicador <= cMultiplicador$latch.DB_MAX_OUTPUT_PORT_TYPE
+cP <= cP$latch.DB_MAX_OUTPUT_PORT_TYPE
+cA <= cA$latch.DB_MAX_OUTPUT_PORT_TYPE
+cB <= cB$latch.DB_MAX_OUTPUT_PORT_TYPE
+cM <= cM$latch.DB_MAX_OUTPUT_PORT_TYPE
+cBbit <= cBbit$latch.DB_MAX_OUTPUT_PORT_TYPE
+cAbit <= cAbit$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

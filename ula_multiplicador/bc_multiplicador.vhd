@@ -3,11 +3,11 @@ USE ieee.std_logic_1164.all;
 
 ENTITY bc_multiplicador IS
 PORT (Reset, clk, inicio : IN STD_LOGIC;
-	    Az, Bz, multZ: IN STD_LOGIC;
+	   Az, Bz, multZ: IN STD_LOGIC;
 		multiplicadorM, multiplicador: IN STD_LOGIC;
-        Abit, Bbit: IN STD_LOGIC;
-        pronto : OUT STD_LOGIC;
-        ini, mM, mMul, mP, mB, mMultiplicador: OUT STD_LOGIC;
+      Abit, Bbit: IN STD_LOGIC;
+      pronto : OUT STD_LOGIC;
+      ini, mM, mMul, mP, mB, mMultiplicador: OUT STD_LOGIC;
 		cSaida, cMultiplicando, cMultiplicador, cP, cA, cB, cM, cBbit, cAbit: OUT STD_LOGIC);
 END bc_multiplicador;
 
