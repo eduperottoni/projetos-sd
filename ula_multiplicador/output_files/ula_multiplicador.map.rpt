@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ula_multiplicador
-Fri Jun 17 15:09:53 2022
+Fri Jun 17 16:51:41 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -17,8 +17,9 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   9. User-Specified and Inferred Latches
  10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |bc_multiplicador
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +45,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 17 15:09:53 2022           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 17 16:51:41 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; ula_multiplicador                               ;
 ; Top-level Entity Name              ; bc_multiplicador                                ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 37                                              ;
-;     Total combinational functions  ; 36                                              ;
+; Total logic elements               ; 41                                              ;
+;     Total combinational functions  ; 40                                              ;
 ;     Dedicated logic registers      ; 8                                               ;
 ; Total registers                    ; 8                                               ;
-; Total pins                         ; 26                                              ;
+; Total pins                         ; 32                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -171,28 +172,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 37       ;
+; Estimated Total logic elements              ; 41       ;
 ;                                             ;          ;
-; Total combinational functions               ; 36       ;
+; Total combinational functions               ; 40       ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 5        ;
-;     -- 3 input functions                    ; 23       ;
+;     -- 4 input functions                    ; 8        ;
+;     -- 3 input functions                    ; 24       ;
 ;     -- <=2 input functions                  ; 8        ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 36       ;
+;     -- normal mode                          ; 40       ;
 ;     -- arithmetic mode                      ; 0        ;
 ;                                             ;          ;
 ; Total registers                             ; 8        ;
 ;     -- Dedicated logic registers            ; 8        ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
-; I/O pins                                    ; 26       ;
+; I/O pins                                    ; 32       ;
 ; Embedded Multiplier 9-bit elements          ; 0        ;
 ; Maximum fan-out node                        ; state.S1 ;
-; Maximum fan-out                             ; 11       ;
-; Total fan-out                               ; 144      ;
-; Average fan-out                             ; 2.06     ;
+; Maximum fan-out                             ; 12       ;
+; Total fan-out                               ; 159      ;
+; Average fan-out                             ; 1.99     ;
 +---------------------------------------------+----------+
 
 
@@ -201,7 +202,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |bc_multiplicador          ; 36 (36)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |bc_multiplicador   ; work         ;
+; |bc_multiplicador          ; 40 (40)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |bc_multiplicador   ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -272,6 +273,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |bc_multiplicador ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -287,7 +298,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jun 17 15:09:51 2022
+    Info: Processing started: Fri Jun 17 16:51:39 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ula_multiplicador -c ula_multiplicador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file bc.vhd
@@ -325,42 +336,42 @@ Info (12021): Found 2 design units, including 1 entities, in source file logica_
     Info (12022): Found design unit 1: locica_a_b_bit-arch
     Info (12023): Found entity 1: locica_a_b_bit
 Info (12127): Elaborating entity "bc_multiplicador" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at bc_multiplicador.vhd(10): used implicit default value for signal "mB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "ini", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "cA", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "cB", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "cM", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "mP", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "cP", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "mMul", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "cBbit", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "cAbit", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "cMultiplicando", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "cMultiplicador", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "mMultiplicador", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "cSaida", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "pronto", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(65): inferring latch(es) for signal or variable "mM", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "mM" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "pronto" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "cSaida" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "mMultiplicador" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "cMultiplicador" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "cMultiplicando" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "cAbit" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "cBbit" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "mMul" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "cP" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "mP" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "cM" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "cB" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "cA" at bc_multiplicador.vhd(65)
-Info (10041): Inferred latch for "ini" at bc_multiplicador.vhd(65)
+Warning (10541): VHDL Signal Declaration warning at bc_multiplicador.vhd(11): used implicit default value for signal "mB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "ini", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cA", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cB", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cM", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "mP", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cP", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "mMul", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cBbit", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cAbit", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cMultiplicando", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cMultiplicador", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "mMultiplicador", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cSaida", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "pronto", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "mM", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "mM" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "pronto" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "cSaida" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "mMultiplicador" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "cMultiplicador" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "cMultiplicando" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "cAbit" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "cBbit" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "mMul" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "cP" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "mP" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "cM" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "cB" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "cA" at bc_multiplicador.vhd(66)
+Info (10041): Inferred latch for "ini" at bc_multiplicador.vhd(66)
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "cB$latch" merged with LATCH primitive "cA$latch"
     Info (13026): Duplicate LATCH primitive "cAbit$latch" merged with LATCH primitive "cBbit$latch"
 Warning (13012): Latch pronto$latch has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.S7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.S1
 Warning (13012): Latch ini$latch has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.S1
 Warning (13012): Latch mM$latch has unsafe behavior
@@ -383,13 +394,13 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "multiplicador"
-Info (21057): Implemented 63 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
+Info (21057): Implemented 73 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 37 logic cells
+    Info (21061): Implemented 41 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 39 warnings
-    Info: Peak virtual memory: 603 megabytes
-    Info: Processing ended: Fri Jun 17 15:09:53 2022
+    Info: Peak virtual memory: 607 megabytes
+    Info: Processing ended: Fri Jun 17 16:51:41 2022
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -25,7 +25,7 @@ begin
 		bbit <= bbit + b(I);
 	end loop;
 	 
-    resultA <= abit;
+   resultA <= abit;
 	resultB <= bbit;
 				 
 end process;

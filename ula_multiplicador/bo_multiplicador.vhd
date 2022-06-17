@@ -10,8 +10,8 @@ PORT (clk : IN STD_LOGIC;
       ini, pronto, cSaida, cMultiplicando, cMultiplicador, cP, cA, cB, cM, cBbit, cAbit: IN STD_LOGIC;
       entA, entB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       mM, mMul, mP, mB, mMultiplicador: IN STD_LOGIC;
-	  Az, Bz, multZ: OUT STD_LOGIC;
-	  Abit, Bbit: OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+	   Az, Bz, multZ: OUT STD_LOGIC;
+	   Abit, Bbit: OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
       saida: OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
 END bo_multiplicador;
 
@@ -39,8 +39,8 @@ ARCHITECTURE estrutura OF bo_multiplicador IS
 	
 	COMPONENT logica_a_b_bit IS
 		GENERIC (N: natural := 4);
-		PORT (A,B : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
-       result : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0));
+		PORT (A, B: IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+       resultA, resultB: OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0));
 	END COMPONENT;
 		
 	SIGNAL saimux1, sairegA, sairegB, sairegmultiplicando, sairegmultiplicador, saireg: STD_LOGIC_VECTOR (N-1 DOWNTO 0);
@@ -157,7 +157,6 @@ BEGIN
 		        d => sairegP,
 		        q => sairegSaida);
     
-    
     -- LOGICA M
     -- mux M
 	 stdN <= conv_std_logic_vector(N, stdN'length);
@@ -177,13 +176,12 @@ BEGIN
     -- subtração do M
     subM <= sairegM - '1';
     
-    
     -- TODO:LOGICA Abit
     geraABbit: logica_a_b_bit GENERIC MAP(N)
         PORT MAP(A => entA,
                  B => entB,
-                 );
-    
+                 resultA => Abit,
+                 resultB => Bbit);
 	
 	saida <= sairegSaida;
 
