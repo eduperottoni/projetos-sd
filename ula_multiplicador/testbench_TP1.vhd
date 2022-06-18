@@ -1,87 +1,203 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity testbench_TP1 is
 end testbench_TP1;
 
-architecture tb of testbench_TP1 is
-	signal clk, inicio, reset : STD_LOGIC;
-	signal dado : SIGNED(N-1 DOWNTO 0);
-	signal s_low, s_high : SIGNED (N-1 DOWNTO 0);
-	signal flagZ, flagOvf, flagN : std_logic);
+architecture comp of testbench_TP1 is
+signal dado, S: signed(3 downto 0);
+signal inicio, reset: std_logic;
+signal clk: std_logic := '0';
+signal flagZ, flagOvf, flagN: std_logic; 
+signal cont1, cont2: signed (3 downto 0) := "0000";
+SIGNAL s_low, s_high: signed(3 downto 0);
+signal cont3: unsigned(10 downto 0) := "00000000000";
+signal alterar, erro: std_logic := '0';
+constant clk_period : time := 10 ns;
+
+component tp1 is
+	generic (N : natural := 4 );
+	PORT (clk, inicio, reset : IN STD_LOGIC;
+			dado : IN SIGNED(N-1 DOWNTO 0);
+			s_low, s_high : OUT SIGNED (N-1 DOWNTO 0);
+			flagZ, flagOvf, flagN : OUT std_logic);
+end component;
+
 begin
-   UUT : entity work.tp1 port map (clk => clk, inicio => inicio, reset => reset, dado => dado, s_low => s_low, s_high => s_high, flagZ => flagZ, flagOvf => flagOvf, flagN => flagN);
+	DUT: TP1 generic map (4) port map(clk, inicio, reset, dado, s_low, s_high, flagZ, flagOvf, flagN);
 
-   tb1 : process
-        constant period: time := 20 ns;
-        begin
-            clk <= '1';
-				reset <= '0';
-            wait for period;
-				
-				inicio => '1';
-				dado => "0010";
-				clk <= '0';
-				wait for period;
-				
-				dado => "1111"
-            assert(saidaH = "0000")
-				assert(saidaL = "1001")
-            report "teste falhou no 1° ciclo" severity error;
-				
-				clk <= '0';
-				inicio => '0';
-				wait for period;
-				
-            clk <= '1';
-            wait for period;
-				
-				inicio => '1';
-            entA => "0100";
-				entB => "0011";
-            assert(saidaH = "0000")
-				assert(saidaL = "1101")
-            report "teste falhou no 2° ciclo"  severity error;
+	teste: process(S, alterar)
+	constant period: time := 10 ns;
+	begin
+		if (alterar = '1') then
+			cont3 <= cont3 + 1;
+		end if;
+		
+		if (cont3 = 0) then
+			if (cont1 + cont2 /= S) then
+				erro <= '1';
+			else erro <= '0';
+			end if;
 
-				clk <= '0';
-				inicio => '0';
-				wait for period;
-				
-            inicio => '1';
-				entA => "0000";
-				entB => "0011";
-            assert(saidaH = "0000")
-				assert(saidaL = "0000")
-            report "teste falhou no 3° ciclo"  severity error;
-				
-				clk <= '0';
-				inicio => '0';
-				wait for period;
-				
-            clk <= '1';
-            wait for period;
-				inicio => '1';
-				entA => "0001";
-				entB => "0011";
-            assert(saidaH = "0000")
-				assert(saidaL = "0011")
-            report "teste falhou no 4° ciclo"  severity error;
-			
-				clk <= '0';
-				inicio => '0';
-				wait for period;
-				
-            clk <= '1';
-            wait for period;
-				
-				inicio => '1';
-            entA => "0010";
-				entB => "0011";
-            assert(saidaH = "0010")
-				assert(saidaL = "1111")
-            report "teste falhou no 5° ciclo, mas ele deveria falhar mesmo" severity error;
+		elsif (cont3 = 1) then
+			if (cont1 - cont2 /= S) then
+				erro <= '1';
+			else erro <= '0';
+			end if;
 
+		elsif (cont3 = 2) then
+			if ((cont1 and cont2) /= S) then
+				erro <= '1';
+			else erro <= '0';
+			end if;
 
-            wait;
+		elsif (cont3 = 3) then
+		
+			if ((cont1 or cont2) /= S) then
+				erro <= '1';
+			else erro <= '0';
+			end if;
+
+		else
+			if ((cont1 * cont2 /= S) and flagN = '0') then
+				erro <= '1';
+			else erro <= '0';
+			end if;
+
+		end if;
 	end process;
-end tb ;
+
+	process
+		constant period: time := 10 ns;
+		begin
+			reset <= '1';
+				wait for 2 ns;
+			reset <= '0'; inicio <= '1';
+				wait for 3 ns;
+			
+			
+			dado <= (OTHERS => '0'); 
+            
+            for i in 0 to 255 loop
+					wait for period;
+					
+                dado <= "0000";
+						wait for period;					 
+					 dado <= cont1;					  
+						wait for period;					  
+					 dado <= cont2;
+
+						
+						wait for 2*period;
+						cont1 <= cont1 + 1;
+						
+						if cont1 = "1111" then
+							cont2 <= cont2 + 1;
+						
+						end if;
+                
+            end loop;
+		alterar <= '1';
+				
+				for i in 0 to 255 loop
+					
+					wait for period;
+					alterar <= '0';
+                dado <= "0001";
+						wait for period;					 
+					 dado <= cont1;					  
+						wait for period;					  
+					 dado <= cont2;
+
+						
+						wait for 2*period;
+
+						cont1 <= cont1 + 1;
+						
+						if cont1 = "1111" then
+							cont2 <= cont2 + 1;
+						
+						end if;
+                
+            end loop;
+		alterar <= '1';
+				for i in 0 to 255 loop
+					
+					wait for period;
+					alterar <= '0';
+                dado <= "0010";
+						wait for period;					 
+					 dado <= cont1;					  
+						wait for period;					  
+					 dado <= cont2;
+
+						
+						wait for 2*period;
+                
+						cont1 <= cont1 + 1;
+						
+						if cont1 = "1111" then
+							cont2 <= cont2 + 1;
+						
+						end if;
+
+            end loop;
+		alterar <= '1';
+			for i in 0 to 255 loop
+					
+					wait for period;
+					alterar <= '0';
+                dado <= "0011";
+						wait for period;					 
+					 dado <= cont1;					  
+						wait for period;					  
+					 dado <= cont2;
+
+						
+						wait for 2*period;
+                
+						cont1 <= cont1 + 1;
+						
+						if cont1 = "1111" then
+							cont2 <= cont2 + 1;
+						
+						end if;
+
+            end loop;
+		alterar <= '1';
+			for i in 0 to 255 loop
+					
+					wait for period;
+					alterar <= '0';
+                dado <= "0100";
+						wait for period;					 
+					 dado <= cont1;					  
+						wait for period;					  
+					 dado <= cont2;
+
+						
+						wait for 2*period;
+
+						cont1 <= cont1 + 1;
+						
+						if cont1 = "1111" then
+							cont2 <= cont2 + 1;
+						
+						end if;
+                
+            end loop;
+		alterar <= '1';		
+	end process;
+	
+	
+
+	clk_process :process
+   begin
+        clk <= '0';
+        wait for clk_period/2;
+        clk <= '1';
+        wait for clk_period/2;
+   end process;
+	
+end comp;

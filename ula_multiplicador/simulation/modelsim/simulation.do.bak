@@ -4,4 +4,4 @@ force -freeze sim:/multiplicador_v1/entB 0011 0 ns,  0001 20 ns, 0010 40 ns, 101
 force -freeze sim:/multiplicador_v1/reset 1 0 ns, 0 20ns;
 force -freeze sim:/multiplicador_v1/inicio 1 0 ns;
 
-run 140 ns;
+run 400 ns;

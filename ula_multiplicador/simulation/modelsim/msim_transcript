@@ -22,112 +22,41 @@
 # -- Compiling entity TP1
 # -- Compiling architecture structure of TP1
 # 
-vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1
-# vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1 
-# ** Error: (vsim-SDF-3196) Failed to find SDF file "C:/Users/edupe/OneDrive/√Årea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo".
-# 
-# Error loading design
-vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1
-# vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1 
-# ** Error: (vsim-SDF-3196) Failed to find SDF file "C:/Users/edupe/OneDrive/√Årea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo".
-# 
-# Error loading design
-vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui work.tp1
-# vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui work.tp1 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.vital_timing(body)
-# Loading ieee.vital_primitives(body)
-# Loading cycloneii.cycloneii_atom_pack(body)
-# Loading cycloneii.cycloneii_components
-# Loading work.tp1(structure)
-# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
-# Loading ieee.std_logic_arith(body)
-# Loading cycloneii.cycloneii_io(structure)
-# Loading cycloneii.cycloneii_mux21(altvital)
-# Loading cycloneii.cycloneii_dffe(behave)
-# Loading cycloneii.cycloneii_asynch_io(behave)
-# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
-# Loading cycloneii.cycloneii_ena_reg(behave)
-# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
-# Loading cycloneii.cycloneii_and1(altvital)
-# ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
-# This may because you are loading cell libraries which are not recommended with
-# the ModelSim Altera version. Expect performance to be adversely affected.
-# do ula_multiplicador_run_msim_gate_vhdl.do 
-# if {[file exists gate_work]} {
-# 	vdel -lib gate_work -all
-# }
-# vlib gate_work
-# vmap work gate_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {ula_multiplicador.vho}
+# vcom -93 -work work {C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/testbench_TP1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package cycloneii_atom_pack
-# -- Loading package cycloneii_components
-# -- Compiling entity TP1
-# -- Compiling architecture structure of TP1
+# -- Loading package NUMERIC_STD
+# -- Compiling entity testbench_TP1
+# -- Compiling architecture comp of testbench_TP1
 # 
-add wave -position end  sim:/tp1/clk
-add wave -position end  sim:/tp1/inicio
-add wave -position end  sim:/tp1/reset
-add wave -position end  sim:/tp1/dado
-add wave -position end  sim:/tp1/s_low
-add wave -position end  sim:/tp1/s_high
-add wave -position end  sim:/tp1/flagZ
-add wave -position end  sim:/tp1/flagOvf
-add wave -position end  sim:/tp1/flagN
-do simulation_TP1.do
-# ** Error: (vsim-4026) Value "00000000" does not represent a literal of the enumeration type.
-# ** Error: (vsim-4011) Invalid force value: 00000000 0 ns.
-# Error in macro ./simulation_TP1.do line 5
-# ** Error: (vsim-4026) Value "00000000" does not represent a literal of the enumeration type.
-# ** Error: (vsim-4011) Invalid force value: 00000000 0 ns.
-# 
-#     while executing
-# "force -freeze sim:/TP1/inicio 00000000 0 ns"
-do simulation_TP1.do
-vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1
-# vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1 
-# ** Error: (vsim-SDF-3196) Failed to find SDF file "C:/Users/edupe/OneDrive/√Årea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo".
-# 
-# Error loading design
-do simulation_TP1.do
-# ** Error: (vish-4008) Object '/clk' not found.
-# Error in macro ./simulation_TP1.do line 8
-# ** Error: (vish-4008) Object '/clk' not found.
-# 
-#     while executing
-# "force /clk 0 0ns, 1 5ns -r 10ns"
-do simulation_TP1.do
-# ** Error: Dataset not found: sim
-# Error in macro ./simulation_TP1.do line 8
-# Dataset not found: sim
-#     while executing
-# "force sim:/TP1/clk 0 0ns, 1 5ns -r 10ns"
-do simulation_TP1.do
-# ** Error: Dataset not found: sim
-# Error in macro ./simulation_TP1.do line 8
-# Dataset not found: sim
-#     while executing
-# "force -freeze sim:/TP1/clk 0 0ns, 1 5ns -r 10ns"
-vsim work.tp1
-# vsim work.tp1 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /NA=ula_multiplicador_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  testbench_TP1
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /NA=ula_multiplicador_vhd.sdo -t 1ps testbench_TP1 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench_tp1(comp)
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# 
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading cycloneii.cycloneii_atom_pack(body)
 # Loading cycloneii.cycloneii_components
 # Loading work.tp1(structure)
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "dado".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_tp1/DUT File: ula_multiplicador.vho Line: 39
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "s_low".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_tp1/DUT File: ula_multiplicador.vho Line: 40
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "s_high".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_tp1/DUT File: ula_multiplicador.vho Line: 41
+# ** Warning: (vsim-8713) C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/testbench_TP1.vhd(28): Suspect default binding for component instance 'DUT'.
+# 
+#    Entity has no generics at all; the component has generic:
+#           N
+# 
+#         Region: /testbench_tp1/DUT
 # Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneii.cycloneii_io(structure)
@@ -138,88 +67,395 @@ vsim work.tp1
 # Loading cycloneii.cycloneii_ena_reg(behave)
 # Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
 # Loading cycloneii.cycloneii_and1(altvital)
-# ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
-# This may because you are loading cell libraries which are not recommended with
-# the ModelSim Altera version. Expect performance to be adversely affected.
-add wave -position end  sim:/tp1/clk
-add wave -position end  sim:/tp1/inicio
-add wave -position end  sim:/tp1/reset
-add wave -position end  sim:/tp1/dado
-add wave -position end  sim:/tp1/s_low
-add wave -position end  sim:/tp1/s_high
-add wave -position end  sim:/tp1/flagZ
-add wave -position end  sim:/tp1/flagOvf
-add wave -position end  sim:/tp1/flagN
-do simulation_TP1.do
-restart
-add wave -position end  sim:/tp1/clk
-add wave -position end  sim:/tp1/inicio
-add wave -position end  sim:/tp1/reset
-add wave -position end  sim:/tp1/dado
-add wave -position end  sim:/tp1/s_low
-add wave -position end  sim:/tp1/s_high
-add wave -position end  sim:/tp1/flagZ
-add wave -position end  sim:/tp1/flagOvf
-add wave -position end  sim:/tp1/flagN
-do simulation_TP1.do
-do simulation.do
-# ** Error: (vish-4008) Object 'sim:/TP1/entA' not found.
-# Error in macro ./simulation.do line 2
-# ** Error: (vish-4008) Object 'sim:/TP1/entA' not found.
+# Fatal error at ula_multiplicador.vho line 41
+#  while elaborating region: /testbench_tp1/DUT
+# Fatal error in file C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/testbench_TP1.vhd
+#  while elaborating region: /testbench_tp1
+# Loading instances from ula_multiplicador_vhd.sdo
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(0): Failed to find INSTANCE '/NA'.
 # 
-#     while executing
-# "force -freeze sim:/TP1/entA 0110 0 ns,  0010 20 ns, 0000 40 ns, 1111 60 ns, 0111 80 ns, 0111 100 ns, 0110 120 ns"
-do simulation_TP1.do
-restart
-do simulation.do
-# ** Error: (vish-4008) Object 'sim:/TP1/entA' not found.
-# Error in macro ./simulation.do line 2
-# ** Error: (vish-4008) Object 'sim:/TP1/entA' not found.
+# ** Error: (vsim-SDF-3894) : Errors occured in reading and resolving instances from compiled SDF file(s).
 # 
-#     while executing
-# "force -freeze sim:/TP1/entA 0110 0 ns,  0010 20 ns, 0000 40 ns, 1111 60 ns, 0111 80 ns, 0111 100 ns, 0110 120 ns"
-do simulation_TP1.do
-add wave -position end  sim:/tp1/clk
-add wave -position end  sim:/tp1/inicio
-add wave -position end  sim:/tp1/reset
-add wave -position end  sim:/tp1/dado
-add wave -position end  sim:/tp1/s_low
-add wave -position end  sim:/tp1/s_high
-add wave -position end  sim:/tp1/flagZ
-add wave -position end  sim:/tp1/flagOvf
-add wave -position end  sim:/tp1/flagN
-restart
-do simulation_TP1.do
-add wave -position end  sim:/tp1/clk
-add wave -position end  sim:/tp1/inicio
-add wave -position end  sim:/tp1/reset
-add wave -position end  sim:/tp1/dado
-add wave -position end  sim:/tp1/s_low
-add wave -position end  sim:/tp1/s_high
-add wave -position end  sim:/tp1/flagZ
-add wave -position end  sim:/tp1/flagOvf
-add wave -position end  sim:/tp1/flagN
-restart
-do simulation_TP1.do
-add wave -position end  sim:/tp1/clk
-add wave -position end  sim:/tp1/inicio
-add wave -position end  sim:/tp1/reset
-add wave -position end  sim:/tp1/dado
-add wave -position end  sim:/tp1/s_low
-add wave -position end  sim:/tp1/s_high
-add wave -position end  sim:/tp1/flagZ
-add wave -position end  sim:/tp1/flagOvf
-add wave -position end  sim:/tp1/flagN
-do simulation_TP1.do
-restart
-restart
-do simulation_TP1.do
-add wave -position end  sim:/tp1/clk
-add wave -position end  sim:/tp1/inicio
-add wave -position end  sim:/tp1/reset
-add wave -position end  sim:/tp1/dado
-add wave -position end  sim:/tp1/s_low
-add wave -position end  sim:/tp1/s_high
-add wave -position end  sim:/tp1/flagZ
-add wave -position end  sim:/tp1/flagOvf
-add wave -position end  sim:/tp1/flagN
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+# 
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./ula_multiplicador_run_msim_gate_vhdl.do PAUSED at line 12
+vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /NA=ula_multiplicador_vhd.sdo -sdftyp {/testbench_tp1=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} -t 1ps work.testbench_tp1
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /NA=ula_multiplicador_vhd.sdo -sdftyp {/testbench_tp1=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} -t 1ps work.testbench_tp1 
+# ** Error: (vsim-SDF-3196) Failed to find SDF file "C:/Users/edupe/OneDrive/√Årea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo".
+# 
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./ula_multiplicador_run_msim_gate_vhdl.do PAUSED at line 12
+vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /NA=ula_multiplicador_vhd.sdo -sdftyp /testbench_tp1/=ula_multiplicador_vhd.sdo -t 1ps work.testbench_tp1
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /NA=ula_multiplicador_vhd.sdo -sdftyp /testbench_tp1/=ula_multiplicador_vhd.sdo -t 1ps work.testbench_tp1 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench_tp1(comp)
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# 
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# 
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.tp1(structure)
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "dado".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_tp1/DUT File: ula_multiplicador.vho Line: 39
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "s_low".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_tp1/DUT File: ula_multiplicador.vho Line: 40
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "s_high".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_tp1/DUT File: ula_multiplicador.vho Line: 41
+# ** Warning: (vsim-8713) C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/testbench_TP1.vhd(28): Suspect default binding for component instance 'DUT'.
+# 
+#    Entity has no generics at all; the component has generic:
+#           N
+# 
+#         Region: /testbench_tp1/DUT
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Fatal error at ula_multiplicador.vho line 41
+#  while elaborating region: /testbench_tp1/DUT
+# Fatal error in file C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/testbench_TP1.vhd
+#  while elaborating region: /testbench_tp1
+# Loading instances from ula_multiplicador_vhd.sdo
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+# 
+# Loading instances from ula_multiplicador_vhd.sdo
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(317): Failed to find INSTANCE '\bc0|Selector0~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(330): Failed to find INSTANCE '\bc0|state.S0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(358): Failed to find INSTANCE '\bc0|state.S1\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(374): Failed to find INSTANCE '\bc0|state.S2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(266): Failed to find INSTANCE '\bc0|state.S3\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(223): Failed to find INSTANCE '\bc0|state.S3~feeder\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(292): Failed to find INSTANCE '\bc0|state.S4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(282): Failed to find INSTANCE '\bc0|state.S4~feeder\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(346): Failed to find INSTANCE '\bc0|state~9\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(390): Failed to find INSTANCE '\bo0|regA|q[0]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(660): Failed to find INSTANCE '\bo0|regA|q[1]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(797): Failed to find INSTANCE '\bo0|regA|q[2]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1007): Failed to find INSTANCE '\bo0|regA|q[3]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(431): Failed to find INSTANCE '\bo0|regB|q[0]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(585): Failed to find INSTANCE '\bo0|regB|q[1]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(732): Failed to find INSTANCE '\bo0|regB|q[2]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1053): Failed to find INSTANCE '\bo0|regB|q[3]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(477): Failed to find INSTANCE '\bo0|regOp|q[0]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(415): Failed to find INSTANCE '\bo0|regOp|q[1]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1109): Failed to find INSTANCE '\bo0|regOp|q[2]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1593): Failed to find INSTANCE '\bo0|regS_high|q[0]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1731): Failed to find INSTANCE '\bo0|regS_high|q[1]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1803): Failed to find INSTANCE '\bo0|regS_high|q[2]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1819): Failed to find INSTANCE '\bo0|regS_high|q[3]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(569): Failed to find INSTANCE '\bo0|regS_low|q[0]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(707): Failed to find INSTANCE '\bo0|regS_low|q[1]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(982): Failed to find INSTANCE '\bo0|regS_low|q[2]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1389): Failed to find INSTANCE '\bo0|regS_low|q[3]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1913): Failed to find INSTANCE '\bo0|regflag_z_n_ovf|q[0]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1929): Failed to find INSTANCE '\bo0|regflag_z_n_ovf|q[1]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1851): Failed to find INSTANCE '\bo0|regflag_z_n_ovf|q[2]\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1039): Failed to find INSTANCE '\bo0|ula0|Equal0~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(539): Failed to find INSTANCE '\bo0|ula0|Equal1~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1023): Failed to find INSTANCE '\bo0|ula0|Mux0~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1125): Failed to find INSTANCE '\bo0|ula0|Mux0~1\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1155): Failed to find INSTANCE '\bo0|ula0|Mux0~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(151): Failed to find INSTANCE '\bo0|ula0|Mux0~3\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1357): Failed to find INSTANCE '\bo0|ula0|Mux0~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1373): Failed to find INSTANCE '\bo0|ula0|Mux0~5\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(934): Failed to find INSTANCE '\bo0|ula0|Mux1~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(950): Failed to find INSTANCE '\bo0|ula0|Mux1~1\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(765): Failed to find INSTANCE '\bo0|ula0|Mux1~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(781): Failed to find INSTANCE '\bo0|ula0|Mux1~3\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(966): Failed to find INSTANCE '\bo0|ula0|Mux1~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(629): Failed to find INSTANCE '\bo0|ula0|Mux2~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(644): Failed to find INSTANCE '\bo0|ula0|Mux2~1\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(121): Failed to find INSTANCE '\bo0|ula0|Mux2~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(676): Failed to find INSTANCE '\bo0|ula0|Mux2~3\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(691): Failed to find INSTANCE '\bo0|ula0|Mux2~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(493): Failed to find INSTANCE '\bo0|ula0|Mux3~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(507): Failed to find INSTANCE '\bo0|ula0|Mux3~1\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(523): Failed to find INSTANCE '\bo0|ula0|Mux3~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(105): Failed to find INSTANCE '\bo0|ula0|Mux3~3\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(553): Failed to find INSTANCE '\bo0|ula0|Mux3~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(828): Failed to find INSTANCE '\bo0|ula0|booth0|Add0~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1184): Failed to find INSTANCE '\bo0|ula0|booth0|Add0~1\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(137): Failed to find INSTANCE '\bo0|ula0|booth0|Add0~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(39): Failed to find INSTANCE '\bo0|ula0|booth0|Add3~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(839): Failed to find INSTANCE '\bo0|ula0|booth0|Add3~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1228): Failed to find INSTANCE '\bo0|ula0|booth0|Add3~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1418): Failed to find INSTANCE '\bo0|ula0|booth0|Add3~6\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1211): Failed to find INSTANCE '\bo0|ula0|booth0|Add4~10\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1245): Failed to find INSTANCE '\bo0|ula0|booth0|Add4~12\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1405): Failed to find INSTANCE '\bo0|ula0|booth0|Add4~13\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1431): Failed to find INSTANCE '\bo0|ula0|booth0|Add4~15\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1261): Failed to find INSTANCE '\bo0|ula0|booth0|Add4~16\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1447): Failed to find INSTANCE '\bo0|ula0|booth0|Add4~17\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(614): Failed to find INSTANCE '\bo0|ula0|booth0|Add4~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(856): Failed to find INSTANCE '\bo0|ula0|booth0|Add4~6\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(873): Failed to find INSTANCE '\bo0|ula0|booth0|Add4~8\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(888): Failed to find INSTANCE '\bo0|ula0|booth0|Add4~9\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(904): Failed to find INSTANCE '\bo0|ula0|booth0|Add5~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1294): Failed to find INSTANCE '\bo0|ula0|booth0|Add5~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1463): Failed to find INSTANCE '\bo0|ula0|booth0|Add5~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1622): Failed to find INSTANCE '\bo0|ula0|booth0|Add5~6\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(919): Failed to find INSTANCE '\bo0|ula0|booth0|Add6~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1609): Failed to find INSTANCE '\bo0|ula0|booth0|Add6~10\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1635): Failed to find INSTANCE '\bo0|ula0|booth0|Add6~12\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1651): Failed to find INSTANCE '\bo0|ula0|booth0|Add6~13\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1277): Failed to find INSTANCE '\bo0|ula0|booth0|Add6~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1311): Failed to find INSTANCE '\bo0|ula0|booth0|Add6~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1326): Failed to find INSTANCE '\bo0|ula0|booth0|Add6~5\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1480): Failed to find INSTANCE '\bo0|ula0|booth0|Add6~6\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1497): Failed to find INSTANCE '\bo0|ula0|booth0|Add6~8\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1513): Failed to find INSTANCE '\bo0|ula0|booth0|Add6~9\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1169): Failed to find INSTANCE '\bo0|ula0|booth0|Add7~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1546): Failed to find INSTANCE '\bo0|ula0|booth0|Add7~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1667): Failed to find INSTANCE '\bo0|ula0|booth0|Add7~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1747): Failed to find INSTANCE '\bo0|ula0|booth0|Add7~6\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1342): Failed to find INSTANCE '\bo0|ula0|booth0|Add8~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1529): Failed to find INSTANCE '\bo0|ula0|booth0|Add8~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1684): Failed to find INSTANCE '\bo0|ula0|booth0|Add8~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1760): Failed to find INSTANCE '\bo0|ula0|booth0|Add8~6\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(601): Failed to find INSTANCE '\bo0|ula0|booth0|p1~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(813): Failed to find INSTANCE '\bo0|ula0|booth0|p1~1\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1199): Failed to find INSTANCE '\bo0|ula0|booth0|p1~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1883): Failed to find INSTANCE '\bo0|ula0|flag_z_n_ovf[0]~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1867): Failed to find INSTANCE '\bo0|ula0|flag_z_n_ovf[0]~3\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1897): Failed to find INSTANCE '\bo0|ula0|flag_z_n_ovf[0]~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(165): Failed to find INSTANCE '\bo0|ula0|flag_z_n_ovf[2]~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1835): Failed to find INSTANCE '\bo0|ula0|flag_z_n_ovf[2]~1\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1141): Failed to find INSTANCE '\bo0|ula0|s_high[0]~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1563): Failed to find INSTANCE '\bo0|ula0|s_high[0]~1\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1579): Failed to find INSTANCE '\bo0|ula0|s_high[0]~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1701): Failed to find INSTANCE '\bo0|ula0|s_high[1]~3\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1717): Failed to find INSTANCE '\bo0|ula0|s_high[1]~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1773): Failed to find INSTANCE '\bo0|ula0|s_high[2]~5\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1789): Failed to find INSTANCE '\bo0|ula0|s_high[2]~6\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(462): Failed to find INSTANCE '\bo0|ula0|somasub0|Add0~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(54): Failed to find INSTANCE '\bo0|ula0|somasub0|Add0~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(88): Failed to find INSTANCE '\bo0|ula0|somasub0|Add0~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1069): Failed to find INSTANCE '\bo0|ula0|somasub0|Add0~6\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(447): Failed to find INSTANCE '\bo0|ula0|somasub0|Add1~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(71): Failed to find INSTANCE '\bo0|ula0|somasub0|Add1~2\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(748): Failed to find INSTANCE '\bo0|ula0|somasub0|Add1~4\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1082): Failed to find INSTANCE '\bo0|ula0|somasub0|Add1~6\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1095): Failed to find INSTANCE '\bo0|ula0|somasub0|s[3]~0\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(181): Failed to find INSTANCE '\clk~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(181): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(190): Failed to find INSTANCE '\clk~clkctrl\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(199): Failed to find INSTANCE 'extena0_reg'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(214): Failed to find INSTANCE '\dado[0]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(214): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(406): Failed to find INSTANCE '\dado[1]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(406): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(723): Failed to find INSTANCE '\dado[2]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(723): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(998): Failed to find INSTANCE '\dado[3]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(998): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(2045): Failed to find INSTANCE '\flagN~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(2045): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(2035): Failed to find INSTANCE '\flagOvf~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(2035): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(2025): Failed to find INSTANCE '\flagZ~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(2025): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(308): Failed to find INSTANCE '\inicio~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(308): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(233): Failed to find INSTANCE '\reset~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(233): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(242): Failed to find INSTANCE '\reset~clkctrl\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(251): Failed to find INSTANCE 'extena0_reg'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1985): Failed to find INSTANCE '\s_high[0]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1985): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1995): Failed to find INSTANCE '\s_high[1]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1995): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(2005): Failed to find INSTANCE '\s_high[2]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(2005): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(2015): Failed to find INSTANCE '\s_high[3]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(2015): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1945): Failed to find INSTANCE '\s_low[0]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1945): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1955): Failed to find INSTANCE '\s_low[1]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1955): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1965): Failed to find INSTANCE '\s_low[2]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1965): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1975): Failed to find INSTANCE '\s_low[3]~I\'.
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(1975): Failed to find INSTANCE 'asynch_inst'.
+# 
+# ** Error: (vsim-SDF-3894) : Errors occured in reading and resolving instances from compiled SDF file(s).
+# 
+# ** Error: (vsim-SDF-3250) ula_multiplicador_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+# 
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./ula_multiplicador_run_msim_gate_vhdl.do PAUSED at line 12
+# Load canceled

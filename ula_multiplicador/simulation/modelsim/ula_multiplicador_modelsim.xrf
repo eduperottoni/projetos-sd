@@ -20,6 +20,7 @@ source_file = 1, C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/
 source_file = 1, C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/booth_multiplier_8bits.vhd
 source_file = 1, C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/booth_multiplier_4bits.vhd
 source_file = 1, C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/booth_multiplier_16bits.vhd
+source_file = 1, C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/testbench_TP1.vhd
 source_file = 1, C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/db/ula_multiplicador.cbx.xml
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd

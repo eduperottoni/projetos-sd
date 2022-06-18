@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
--- DATE "06/18/2022 02:40:51"
+-- DATE "06/18/2022 10:53:19"
 
 -- 
 -- Device: Altera EP2C35F672C6 Package FBGA672
@@ -212,12 +212,12 @@ SIGNAL \bo0|ula0|flag_z_n_ovf[0]~3_combout\ : std_logic;
 SIGNAL \bo0|ula0|flag_z_n_ovf[0]~2_combout\ : std_logic;
 SIGNAL \bo0|ula0|flag_z_n_ovf[0]~4_combout\ : std_logic;
 SIGNAL \dado~combout\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \bo0|regS_low|q\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \bo0|regA|q\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \bo0|regS_high|q\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \bo0|regOp|q\ : std_logic_vector(2 DOWNTO 0);
-SIGNAL \bo0|regB|q\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \bo0|regflag_z_n_ovf|q\ : std_logic_vector(2 DOWNTO 0);
+SIGNAL \bo0|regB|q\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \bo0|regOp|q\ : std_logic_vector(2 DOWNTO 0);
+SIGNAL \bo0|regS_high|q\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \bo0|regA|q\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \bo0|regS_low|q\ : std_logic_vector(3 DOWNTO 0);
 
 BEGIN
 
