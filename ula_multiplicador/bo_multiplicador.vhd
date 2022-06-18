@@ -12,7 +12,8 @@ PORT (clk : IN STD_LOGIC;
       mM, mMul, mP, mB, mMultiplicador: IN STD_LOGIC;
 	   Az, Bz, multZ: OUT STD_LOGIC;
 	   Abit, Bbit: OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
-      saida: OUT STD_LOGIC_VECTOR(N*2-1 DOWNTO 0));
+      saida: OUT STD_LOGIC_VECTOR(N*2-1 DOWNTO 0);
+		pronto_out: out std_logic);
 END bo_multiplicador;
 
 ARCHITECTURE estrutura OF bo_multiplicador IS
@@ -196,4 +197,5 @@ BEGIN
 	saida <= sairegSaida;
 	Abit <= sAbit;
 	Bbit <= sBbit;
+	pronto_out <= pronto;
 END estrutura;

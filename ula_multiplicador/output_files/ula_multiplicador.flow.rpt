@@ -1,5 +1,5 @@
 Flow report for ula_multiplicador
-Sat Jun 18 00:37:13 2022
+Sat Jun 18 02:40:51 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat Jun 18 00:37:13 2022           ;
+; Flow Status                        ; Successful - Sat Jun 18 02:40:51 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; ula_multiplicador                               ;
-; Top-level Entity Name              ; multiplicador_v1                                ;
+; Top-level Entity Name              ; TP1                                             ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 113                                             ;
-;     Total combinational functions  ; 96                                              ;
-;     Dedicated logic registers      ; 31                                              ;
-; Total registers                    ; 31                                              ;
-; Total pins                         ; 20                                              ;
+; Total logic elements               ; 91 / 33,216 ( < 1 % )                           ;
+;     Total combinational functions  ; 88 / 33,216 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 27 / 33,216 ( < 1 % )                           ;
+; Total registers                    ; 27                                              ;
+; Total pins                         ; 18 / 475 ( 4 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -64,26 +64,28 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/18/2022 00:37:11 ;
+; Start date & time ; 06/18/2022 02:40:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ula_multiplicador   ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                ;
-+-------------------------------------+-----------------------+-------------------+------------------+------------+
-; Assignment Name                     ; Value                 ; Default Value     ; Entity Name      ; Section Id ;
-+-------------------------------------+-----------------------+-------------------+------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 0.165552343108309     ; --                ; --               ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                    ; --                ; --               ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                     ; --                ; --               ; --         ;
-; PARTITION_COLOR                     ; 16764057              ; --                ; multiplicador_v1 ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING ; --                ; multiplicador_v1 ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                ; --                ; multiplicador_v1 ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files          ; --                ; --               ; --         ;
-; TOP_LEVEL_ENTITY                    ; multiplicador_v1      ; ula_multiplicador ; --               ; --         ;
-+-------------------------------------+-----------------------+-------------------+------------------+------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                      ;
++-------------------------------------+------------------------------+-------------------+-------------+----------------+
+; Assignment Name                     ; Value                        ; Default Value     ; Entity Name ; Section Id     ;
++-------------------------------------+------------------------------+-------------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 925252456104.165553083425876 ; --                ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                         ; --                ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)       ; <None>            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                           ; --                ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                            ; --                ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                     ; --                ; TP1         ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING        ; --                ; TP1         ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                       ; --                ; TP1         ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                 ; --                ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; TP1                          ; ula_multiplicador ; --          ; --             ;
++-------------------------------------+------------------------------+-------------------+-------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -91,24 +93,30 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 595 MB              ; 00:00:02                           ;
-; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 4640 MB             ; 00:00:01                           ;
+; Fitter               ; 00:00:05     ; 1.0                     ; 4873 MB             ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4509 MB             ; 00:00:00                           ;
+; Total                ; 00:00:06     ; --                      ; --                  ; 00:00:05                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                            ;
-+----------------------+------------------------+--------------+------------+----------------+
-; Module Name          ; Machine Hostname       ; OS Name      ; OS Version ; Processor type ;
-+----------------------+------------------------+--------------+------------+----------------+
-; Analysis & Synthesis ; fernanda-Inspiron-5490 ; Ubuntu 21.10 ; 21         ; x86_64         ;
-+----------------------+------------------------+--------------+------------+----------------+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; dell-eduardo     ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter               ; dell-eduardo     ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer   ; dell-eduardo     ; Windows 7 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off ula_multiplicador -c ula_multiplicador
+quartus_fit --read_settings_files=on --write_settings_files=off ula_multiplicador -c ula_multiplicador
+quartus_eda --read_settings_files=off --write_settings_files=off ula_multiplicador -c ula_multiplicador
 
 
 

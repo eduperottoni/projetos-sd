@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ula_multiplicador
-Sat Jun 18 00:37:13 2022
+Sat Jun 18 02:40:35 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,38 +13,22 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |multiplicador_v1|bc_multiplicador:bloco_controle|state
-  9. User-Specified and Inferred Latches
- 10. Logic Cells Representing Combinational Loops
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: Top-level Entity: |multiplicador_v1
- 16. Parameter Settings for User Entity Instance: bc_multiplicador:bloco_controle
- 17. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo
- 18. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regA
- 19. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regB
- 20. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|igualazero:geraAz
- 21. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|igualazero:geraBz
- 22. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|mux2para1:muxmultiplicando
- 23. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|mux2para1:mux1multiplicador
- 24. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regMultiplicando
- 25. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|mux2para1:mux2multiplicador
- 26. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regMultiplicador
- 27. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|igualazero:geramultZ
- 28. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|mux2para1:muxP
- 29. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regP
- 30. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|teste:test
- 31. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regSaida
- 32. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|mux2para1:muxM
- 33. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regm
- 34. Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|logicaabbit:geraABbit
- 35. Port Connectivity Checks: "bo_multiplicador:bloco_operativo|mux2para1:muxM"
- 36. Port Connectivity Checks: "bo_multiplicador:bloco_operativo|mux2para1:muxP"
- 37. Port Connectivity Checks: "bo_multiplicador:bloco_operativo|registrador:regMultiplicando"
- 38. Elapsed Time Per Partition
- 39. Analysis & Synthesis Messages
+  8. State Machine - |TP1|TP1_bc:bc0|state
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |TP1
+ 12. Parameter Settings for User Entity Instance: TP1_bo:bo0
+ 13. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regA
+ 14. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regB
+ 15. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador_unsigned:regOp
+ 16. Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0
+ 17. Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|somadorsubtrator:somasub0
+ 18. Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|booth_multiplier_4bits:booth0
+ 19. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regS_low
+ 20. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regS_high
+ 21. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador_unsigned:regflag_z_n_ovf
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -70,16 +54,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jun 18 00:37:13 2022           ;
+; Analysis & Synthesis Status        ; Successful - Sat Jun 18 02:40:35 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; ula_multiplicador                               ;
-; Top-level Entity Name              ; multiplicador_v1                                ;
+; Top-level Entity Name              ; TP1                                             ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 113                                             ;
-;     Total combinational functions  ; 96                                              ;
-;     Dedicated logic registers      ; 31                                              ;
-; Total registers                    ; 31                                              ;
-; Total pins                         ; 20                                              ;
+; Total logic elements               ; 104                                             ;
+;     Total combinational functions  ; 88                                              ;
+;     Dedicated logic registers      ; 27                                              ;
+; Total registers                    ; 27                                              ;
+; Total pins                         ; 18                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -93,7 +77,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; multiplicador_v1   ; ula_multiplicador  ;
+; Top-level entity name                                                      ; TP1                ; ula_multiplicador  ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -183,20 +167,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; registrador.vhd                  ; yes             ; User VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ula_multiplicador/registrador.vhd      ;         ;
-; mux2para1.vhd                    ; yes             ; User VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ula_multiplicador/mux2para1.vhd        ;         ;
-; igualazero.vhd                   ; yes             ; User VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ula_multiplicador/igualazero.vhd       ;         ;
-; multiplicador_v1.vhd             ; yes             ; User VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ula_multiplicador/multiplicador_v1.vhd ;         ;
-; bc_multiplicador.vhd             ; yes             ; User VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ula_multiplicador/bc_multiplicador.vhd ;         ;
-; bo_multiplicador.vhd             ; yes             ; User VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ula_multiplicador/bo_multiplicador.vhd ;         ;
-; teste.vhd                        ; yes             ; User VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ula_multiplicador/teste.vhd            ;         ;
-; logicaabbit.vhd                  ; yes             ; User VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ula_multiplicador/logicaabbit.vhd      ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------+---------+
+; somadorsubtrator.vhd             ; yes             ; User VHDL File  ; C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/somadorsubtrator.vhd       ;         ;
+; registrador.vhd                  ; yes             ; User VHDL File  ; C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/registrador.vhd            ;         ;
+; TP1_bc.vhd                       ; yes             ; User VHDL File  ; C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/TP1_bc.vhd                 ;         ;
+; TP1_bo.vhd                       ; yes             ; User VHDL File  ; C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/TP1_bo.vhd                 ;         ;
+; TP1.vhd                          ; yes             ; User VHDL File  ; C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/TP1.vhd                    ;         ;
+; registrador_unsigned.vhd         ; yes             ; User VHDL File  ; C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/registrador_unsigned.vhd   ;         ;
+; ula.vhd                          ; yes             ; User VHDL File  ; C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/ula.vhd                    ;         ;
+; booth_multiplier_4bits.vhd       ; yes             ; User VHDL File  ; C:/Users/edupe/OneDrive/햞ea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/booth_multiplier_4bits.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -204,129 +188,64 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 113   ;
+; Estimated Total logic elements              ; 104   ;
 ;                                             ;       ;
-; Total combinational functions               ; 96    ;
+; Total combinational functions               ; 88    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 23    ;
-;     -- 3 input functions                    ; 46    ;
-;     -- <=2 input functions                  ; 27    ;
+;     -- 4 input functions                    ; 39    ;
+;     -- 3 input functions                    ; 38    ;
+;     -- <=2 input functions                  ; 11    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 68    ;
-;     -- arithmetic mode                      ; 28    ;
+;     -- normal mode                          ; 64    ;
+;     -- arithmetic mode                      ; 24    ;
 ;                                             ;       ;
-; Total registers                             ; 31    ;
-;     -- Dedicated logic registers            ; 31    ;
+; Total registers                             ; 27    ;
+;     -- Dedicated logic registers            ; 27    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 20    ;
+; I/O pins                                    ; 18    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 31    ;
-; Total fan-out                               ; 379   ;
-; Average fan-out                             ; 2.58  ;
+; Maximum fan-out                             ; 27    ;
+; Total fan-out                               ; 384   ;
+; Average fan-out                             ; 2.89  ;
 +---------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Library Name ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------+
-; |multiplicador_v1                     ; 96 (0)            ; 31 (0)       ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |multiplicador_v1                                                        ; work         ;
-;    |bc_multiplicador:bloco_controle|  ; 19 (19)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplicador_v1|bc_multiplicador:bloco_controle                        ; work         ;
-;    |bo_multiplicador:bloco_operativo| ; 77 (0)            ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplicador_v1|bo_multiplicador:bloco_operativo                       ; work         ;
-;       |logicaabbit:geraABbit|         ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplicador_v1|bo_multiplicador:bloco_operativo|logicaabbit:geraABbit ; work         ;
-;       |mux2para1:muxP|                ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplicador_v1|bo_multiplicador:bloco_operativo|mux2para1:muxP        ; work         ;
-;       |registrador:regA|              ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplicador_v1|bo_multiplicador:bloco_operativo|registrador:regA      ; work         ;
-;       |registrador:regB|              ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplicador_v1|bo_multiplicador:bloco_operativo|registrador:regB      ; work         ;
-;       |registrador:regP|              ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplicador_v1|bo_multiplicador:bloco_operativo|registrador:regP      ; work         ;
-;       |registrador:regSaida|          ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplicador_v1|bo_multiplicador:bloco_operativo|registrador:regSaida  ; work         ;
-;       |teste:test|                    ; 61 (61)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplicador_v1|bo_multiplicador:bloco_operativo|teste:test            ; work         ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                              ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
+; |TP1                                         ; 88 (0)            ; 27 (0)       ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |TP1                                                   ; work         ;
+;    |TP1_bc:bc0|                              ; 2 (2)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bc:bc0                                        ; work         ;
+;    |TP1_bo:bo0|                              ; 86 (0)            ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0                                        ; work         ;
+;       |registrador:regA|                     ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador:regA                       ; work         ;
+;       |registrador:regB|                     ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador:regB                       ; work         ;
+;       |registrador:regS_high|                ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador:regS_high                  ; work         ;
+;       |registrador:regS_low|                 ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador:regS_low                   ; work         ;
+;       |registrador_unsigned:regOp|           ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador_unsigned:regOp             ; work         ;
+;       |registrador_unsigned:regflag_z_n_ovf| ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador_unsigned:regflag_z_n_ovf   ; work         ;
+;       |ula:ula0|                             ; 86 (35)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|ula:ula0                               ; work         ;
+;          |booth_multiplier_4bits:booth0|     ; 42 (42)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|ula:ula0|booth_multiplier_4bits:booth0 ; work         ;
+;          |somadorsubtrator:somasub0|         ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|ula:ula0|somadorsubtrator:somasub0     ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------+
-; State Machine - |multiplicador_v1|bc_multiplicador:bloco_controle|state                          ;
-+----------+----------+----------+----------+----------+----------+----------+----------+----------+
-; Name     ; state.S7 ; state.S6 ; state.S5 ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
-+----------+----------+----------+----------+----------+----------+----------+----------+----------+
-; state.S0 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
-; state.S1 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
-; state.S2 ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
-; state.S3 ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
-; state.S4 ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
-; state.S5 ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; state.S6 ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; state.S7 ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-+----------+----------+----------+----------+----------+----------+----------+----------+----------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                             ;
-+-----------------------------------------------------+--------------------------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal                              ; Free of Timing Hazards ;
-+-----------------------------------------------------+--------------------------------------------------+------------------------+
-; bc_multiplicador:bloco_controle|cSaida              ; bc_multiplicador:bloco_controle|WideOr13         ; yes                    ;
-; bc_multiplicador:bloco_controle|mP                  ; bc_multiplicador:bloco_controle|WideOr5          ; yes                    ;
-; bo_multiplicador:bloco_operativo|teste:test|p[0]    ; bo_multiplicador:bloco_operativo|teste:test|p[0] ; yes                    ;
-; bc_multiplicador:bloco_controle|cP                  ; bc_multiplicador:bloco_controle|WideOr6          ; yes                    ;
-; bo_multiplicador:bloco_operativo|teste:test|p[1]    ; bo_multiplicador:bloco_operativo|teste:test|p[1] ; yes                    ;
-; bo_multiplicador:bloco_operativo|teste:test|p[2]    ; bo_multiplicador:bloco_operativo|teste:test|p[2] ; yes                    ;
-; bo_multiplicador:bloco_operativo|teste:test|p[3]    ; bo_multiplicador:bloco_operativo|teste:test|p[7] ; yes                    ;
-; bo_multiplicador:bloco_operativo|teste:test|p[4]    ; bo_multiplicador:bloco_operativo|teste:test|p[7] ; yes                    ;
-; bo_multiplicador:bloco_operativo|teste:test|p[5]    ; bo_multiplicador:bloco_operativo|teste:test|p[7] ; yes                    ;
-; bo_multiplicador:bloco_operativo|teste:test|p[6]    ; bo_multiplicador:bloco_operativo|teste:test|p[7] ; yes                    ;
-; bo_multiplicador:bloco_operativo|teste:test|p[7]    ; bo_multiplicador:bloco_operativo|teste:test|p[7] ; yes                    ;
-; bc_multiplicador:bloco_controle|cA                  ; bc_multiplicador:bloco_controle|WideOr3          ; yes                    ;
-; bc_multiplicador:bloco_controle|cB                  ; bc_multiplicador:bloco_controle|WideOr3          ; yes                    ;
-; Number of user-specified and inferred latches = 13  ;                                                  ;                        ;
-+-----------------------------------------------------+--------------------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+-----------------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                          ;
-+-------------------------------------------------------------------+---+
-; Logic Cell Name                                                   ;   ;
-+-------------------------------------------------------------------+---+
-; bo_multiplicador:bloco_operativo|logicaabbit:geraABbit|resultA[3] ;   ;
-; bo_multiplicador:bloco_operativo|logicaabbit:geraABbit|resultB[3] ;   ;
-; bo_multiplicador:bloco_operativo|logicaabbit:geraABbit|resultA[2] ;   ;
-; bo_multiplicador:bloco_operativo|logicaabbit:geraABbit|resultB[2] ;   ;
-; bo_multiplicador:bloco_operativo|logicaabbit:geraABbit|resultA[1] ;   ;
-; bo_multiplicador:bloco_operativo|logicaabbit:geraABbit|resultB[1] ;   ;
-; bo_multiplicador:bloco_operativo|logicaabbit:geraABbit|resultA[0] ;   ;
-; bo_multiplicador:bloco_operativo|logicaabbit:geraABbit|resultB[0] ;   ;
-; Number of logic cells representing combinational loops            ; 8 ;
-+-------------------------------------------------------------------+---+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                             ;
-+-----------------------------------------------------------------------+----------------------------------------+
-; Register name                                                         ; Reason for Removal                     ;
-+-----------------------------------------------------------------------+----------------------------------------+
-; bc_multiplicador:bloco_controle|state.S6                              ; Stuck at GND due to stuck port data_in ;
-; bo_multiplicador:bloco_operativo|registrador:regMultiplicador|q[0..3] ; Lost fanout                            ;
-; Total Number of Removed Registers = 5                                 ;                                        ;
-+-----------------------------------------------------------------------+----------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                ;
-+------------------------------------------+---------------------------+---------------------------------------------------------------------+
-; Register name                            ; Reason for Removal        ; Registers Removed due to This Register                              ;
-+------------------------------------------+---------------------------+---------------------------------------------------------------------+
-; bc_multiplicador:bloco_controle|state.S6 ; Stuck at GND              ; bo_multiplicador:bloco_operativo|registrador:regMultiplicador|q[0], ;
-;                                          ; due to stuck port data_in ; bo_multiplicador:bloco_operativo|registrador:regMultiplicador|q[1], ;
-;                                          ;                           ; bo_multiplicador:bloco_operativo|registrador:regMultiplicador|q[2], ;
-;                                          ;                           ; bo_multiplicador:bloco_operativo|registrador:regMultiplicador|q[3]  ;
-+------------------------------------------+---------------------------+---------------------------------------------------------------------+
++-----------------------------------------------------------------+
+; State Machine - |TP1|TP1_bc:bc0|state                           ;
++----------+----------+----------+----------+----------+----------+
+; Name     ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
++----------+----------+----------+----------+----------+----------+
+; state.S0 ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.S1 ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.S2 ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.S3 ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.S4 ; 1        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+
 
 
 +------------------------------------------------------+
@@ -334,253 +253,136 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 31    ;
+; Total registers                              ; 27    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 7     ;
+; Number of registers using Asynchronous Clear ; 5     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 24    ;
+; Number of registers using Clock Enable       ; 22    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |multiplicador_v1|bc_multiplicador:bloco_controle|state            ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |multiplicador_v1|bo_multiplicador:bloco_operativo|teste:test|p[3] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|booth_multiplier_4bits:booth0|p2[5] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|booth_multiplier_4bits:booth0|p3[5] ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|Mux3                                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|s_high[0]                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |multiplicador_v1 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; N              ; 4     ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |TP1 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; N              ; 4     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 4     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regA ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regB ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador_unsigned:regOp ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|somadorsubtrator:somasub0 ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|booth_multiplier_4bits:booth0 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bc_multiplicador:bloco_controle ;
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regS_low ;
 +----------------+-------+-----------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                ;
 +----------------+-------+-----------------------------------------------------+
-; N              ; 4     ; Signed Integer                                      ;
+; n              ; 4     ; Signed Integer                                      ;
 +----------------+-------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo ;
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regS_high ;
 +----------------+-------+------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                 ;
 +----------------+-------+------------------------------------------------------+
-; N              ; 4     ; Signed Integer                                       ;
+; n              ; 4     ; Signed Integer                                       ;
 +----------------+-------+------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regA ;
-+----------------+-------+-----------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                  ;
-+----------------+-------+-----------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                        ;
-+----------------+-------+-----------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regB ;
-+----------------+-------+-----------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                  ;
-+----------------+-------+-----------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                        ;
-+----------------+-------+-----------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|igualazero:geraAz ;
-+----------------+-------+------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                   ;
-+----------------+-------+------------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                         ;
-+----------------+-------+------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|igualazero:geraBz ;
-+----------------+-------+------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                   ;
-+----------------+-------+------------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                         ;
-+----------------+-------+------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|mux2para1:muxmultiplicando ;
-+----------------+-------+---------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                            ;
-+----------------+-------+---------------------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                                  ;
-+----------------+-------+---------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|mux2para1:mux1multiplicador ;
-+----------------+-------+----------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                             ;
-+----------------+-------+----------------------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                                   ;
-+----------------+-------+----------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regMultiplicando ;
-+----------------+-------+-----------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                              ;
-+----------------+-------+-----------------------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                                    ;
-+----------------+-------+-----------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|mux2para1:mux2multiplicador ;
-+----------------+-------+----------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                             ;
-+----------------+-------+----------------------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                                   ;
-+----------------+-------+----------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regMultiplicador ;
-+----------------+-------+-----------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                              ;
-+----------------+-------+-----------------------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                                    ;
-+----------------+-------+-----------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|igualazero:geramultZ ;
-+----------------+-------+---------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                      ;
-+----------------+-------+---------------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                            ;
-+----------------+-------+---------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +----------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|mux2para1:muxP ;
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador_unsigned:regflag_z_n_ovf ;
 +----------------+-------+---------------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                                ;
 +----------------+-------+---------------------------------------------------------------------+
-; n              ; 8     ; Signed Integer                                                      ;
+; n              ; 3     ; Signed Integer                                                      ;
 +----------------+-------+---------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regP ;
-+----------------+-------+-----------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                  ;
-+----------------+-------+-----------------------------------------------------------------------+
-; n              ; 8     ; Signed Integer                                                        ;
-+----------------+-------+-----------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|teste:test ;
-+----------------+-------+-----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                            ;
-+----------------+-------+-----------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                  ;
-+----------------+-------+-----------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regSaida ;
-+----------------+-------+---------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                      ;
-+----------------+-------+---------------------------------------------------------------------------+
-; n              ; 8     ; Signed Integer                                                            ;
-+----------------+-------+---------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|mux2para1:muxM ;
-+----------------+-------+---------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                ;
-+----------------+-------+---------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                      ;
-+----------------+-------+---------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|registrador:regm ;
-+----------------+-------+-----------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                  ;
-+----------------+-------+-----------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                        ;
-+----------------+-------+-----------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bo_multiplicador:bloco_operativo|logicaabbit:geraABbit ;
-+----------------+-------+----------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                       ;
-+----------------+-------+----------------------------------------------------------------------------+
-; n              ; 4     ; Signed Integer                                                             ;
-+----------------+-------+----------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------+
-; Port Connectivity Checks: "bo_multiplicador:bloco_operativo|mux2para1:muxM" ;
-+---------+-------+----------+------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                        ;
-+---------+-------+----------+------------------------------------------------+
-; b[1..0] ; Input ; Info     ; Stuck at GND                                   ;
-; b[3]    ; Input ; Info     ; Stuck at GND                                   ;
-; b[2]    ; Input ; Info     ; Stuck at VCC                                   ;
-+---------+-------+----------+------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------+
-; Port Connectivity Checks: "bo_multiplicador:bloco_operativo|mux2para1:muxP" ;
-+------+-------+----------+---------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                           ;
-+------+-------+----------+---------------------------------------------------+
-; b    ; Input ; Info     ; Stuck at GND                                      ;
-+------+-------+----------+---------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "bo_multiplicador:bloco_operativo|registrador:regMultiplicando"                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -598,7 +400,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jun 18 00:37:11 2022
+    Info: Processing started: Sat Jun 18 02:40:34 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ula_multiplicador -c ula_multiplicador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file bc.vhd
@@ -638,110 +440,53 @@ Info (12021): Found 2 design units, including 1 entities, in source file teste.v
 Info (12021): Found 2 design units, including 1 entities, in source file logicaabbit.vhd
     Info (12022): Found design unit 1: logicaabbit-arch
     Info (12023): Found entity 1: logicaabbit
-Info (12127): Elaborating entity "multiplicador_v1" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at multiplicador_v1.vhd(10): used implicit default value for signal "pronto" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at multiplicador_v1.vhd(15): used implicit default value for signal "multiplicadorM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at multiplicador_v1.vhd(15): used implicit default value for signal "multiplicador" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Info (12128): Elaborating entity "bc_multiplicador" for hierarchy "bc_multiplicador:bloco_controle"
-Warning (10541): VHDL Signal Declaration warning at bc_multiplicador.vhd(11): used implicit default value for signal "mB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "ini", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cA", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cB", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cM", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "mP", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cP", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "mMul", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cBbit", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cAbit", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cMultiplicando", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cMultiplicador", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "mMultiplicador", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "cSaida", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "pronto", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bc_multiplicador.vhd(66): inferring latch(es) for signal or variable "mM", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "mM" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "pronto" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "cSaida" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "mMultiplicador" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "cMultiplicador" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "cMultiplicando" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "cAbit" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "cBbit" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "mMul" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "cP" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "mP" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "cM" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "cB" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "cA" at bc_multiplicador.vhd(66)
-Info (10041): Inferred latch for "ini" at bc_multiplicador.vhd(66)
-Info (12128): Elaborating entity "bo_multiplicador" for hierarchy "bo_multiplicador:bloco_operativo"
-Warning (10036): Verilog HDL or VHDL warning at bo_multiplicador.vhd(53): object "sairegmultiplicando" assigned a value but never read
-Warning (10540): VHDL Signal Declaration warning at bo_multiplicador.vhd(59): used explicit default value for signal "tudo_zero" because signal was never assigned a value
-Warning (10036): Verilog HDL or VHDL warning at bo_multiplicador.vhd(60): object "m" assigned a value but never read
-Info (12128): Elaborating entity "registrador" for hierarchy "bo_multiplicador:bloco_operativo|registrador:regA"
+Info (12021): Found 2 design units, including 1 entities, in source file tp1_bc.vhd
+    Info (12022): Found design unit 1: TP1_bc-estrutura
+    Info (12023): Found entity 1: TP1_bc
+Info (12021): Found 2 design units, including 1 entities, in source file tp1_bo.vhd
+    Info (12022): Found design unit 1: TP1_bo-estrutura
+    Info (12023): Found entity 1: TP1_bo
+Info (12021): Found 2 design units, including 1 entities, in source file tp1.vhd
+    Info (12022): Found design unit 1: TP1-estrutura
+    Info (12023): Found entity 1: TP1
+Info (12021): Found 2 design units, including 1 entities, in source file registrador_unsigned.vhd
+    Info (12022): Found design unit 1: registrador_unsigned-estrutura
+    Info (12023): Found entity 1: registrador_unsigned
+Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
+    Info (12022): Found design unit 1: ula-arch
+    Info (12023): Found entity 1: ula
+Info (12021): Found 2 design units, including 1 entities, in source file booth_multiplier_8bits.vhd
+    Info (12022): Found design unit 1: booth_multiplier_8bits-arch
+    Info (12023): Found entity 1: booth_multiplier_8bits
+Info (12021): Found 2 design units, including 1 entities, in source file booth_multiplier_4bits.vhd
+    Info (12022): Found design unit 1: booth_multiplier_4bits-arch
+    Info (12023): Found entity 1: booth_multiplier_4bits
+Info (12021): Found 2 design units, including 1 entities, in source file booth_multiplier_16bits.vhd
+    Info (12022): Found design unit 1: booth_multiplier_16bits-arch
+    Info (12023): Found entity 1: booth_multiplier_16bits
+Info (12127): Elaborating entity "TP1" for the top level hierarchy
+Info (12128): Elaborating entity "TP1_bc" for hierarchy "TP1_bc:bc0"
+Info (12128): Elaborating entity "TP1_bo" for hierarchy "TP1_bo:bo0"
+Info (12128): Elaborating entity "registrador" for hierarchy "TP1_bo:bo0|registrador:regA"
 Warning (10492): VHDL Process Statement warning at registrador.vhd(16): signal "carga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12128): Elaborating entity "igualazero" for hierarchy "bo_multiplicador:bloco_operativo|igualazero:geraAz"
-Info (12128): Elaborating entity "mux2para1" for hierarchy "bo_multiplicador:bloco_operativo|mux2para1:muxmultiplicando"
-Info (12128): Elaborating entity "mux2para1" for hierarchy "bo_multiplicador:bloco_operativo|mux2para1:muxP"
-Info (12128): Elaborating entity "registrador" for hierarchy "bo_multiplicador:bloco_operativo|registrador:regP"
-Warning (10492): VHDL Process Statement warning at registrador.vhd(16): signal "carga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12128): Elaborating entity "teste" for hierarchy "bo_multiplicador:bloco_operativo|teste:test"
-Warning (10540): VHDL Signal Declaration warning at teste.vhd(16): used explicit default value for signal "ZEROS" because signal was never assigned a value
-Warning (10492): VHDL Process Statement warning at teste.vhd(31): signal "p" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at teste.vhd(30): signal "p" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at teste.vhd(30): signal "ZEROS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at teste.vhd(27): inferring latch(es) for signal or variable "p", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "p[0]" at teste.vhd(27)
-Info (10041): Inferred latch for "p[1]" at teste.vhd(27)
-Info (10041): Inferred latch for "p[2]" at teste.vhd(27)
-Info (10041): Inferred latch for "p[3]" at teste.vhd(27)
-Info (10041): Inferred latch for "p[4]" at teste.vhd(27)
-Info (10041): Inferred latch for "p[5]" at teste.vhd(27)
-Info (10041): Inferred latch for "p[6]" at teste.vhd(27)
-Info (10041): Inferred latch for "p[7]" at teste.vhd(27)
-Info (12128): Elaborating entity "logicaabbit" for hierarchy "bo_multiplicador:bloco_operativo|logicaabbit:geraABbit"
-Warning (10540): VHDL Signal Declaration warning at logicaabbit.vhd(14): used explicit default value for signal "ZEROS" because signal was never assigned a value
-Warning (10492): VHDL Process Statement warning at logicaabbit.vhd(20): signal "ZEROS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at logicaabbit.vhd(21): signal "ZEROS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at logicaabbit.vhd(24): signal "abit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at logicaabbit.vhd(25): signal "bbit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at logicaabbit.vhd(28): signal "abit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at logicaabbit.vhd(29): signal "bbit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "bc_multiplicador:bloco_controle|cB" merged with LATCH primitive "bc_multiplicador:bloco_controle|cA"
-Warning (13012): Latch bc_multiplicador:bloco_controle|cSaida has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal bc_multiplicador:bloco_controle|state.S7
-Warning (13012): Latch bc_multiplicador:bloco_controle|mP has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal bc_multiplicador:bloco_controle|state.S1
-Warning (13012): Latch bo_multiplicador:bloco_operativo|teste:test|p[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal bo_multiplicador:bloco_operativo|registrador:regB|q[1]
-Warning (13012): Latch bo_multiplicador:bloco_operativo|teste:test|p[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal bo_multiplicador:bloco_operativo|registrador:regB|q[2]
-Warning (13012): Latch bo_multiplicador:bloco_operativo|teste:test|p[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal bo_multiplicador:bloco_operativo|registrador:regB|q[3]
-Warning (13012): Latch bo_multiplicador:bloco_operativo|teste:test|p[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal bo_multiplicador:bloco_operativo|registrador:regB|q[3]
-Warning (13012): Latch bo_multiplicador:bloco_operativo|teste:test|p[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal bo_multiplicador:bloco_operativo|registrador:regB|q[3]
-Warning (13012): Latch bo_multiplicador:bloco_operativo|teste:test|p[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal bo_multiplicador:bloco_operativo|registrador:regB|q[3]
-Warning (13012): Latch bo_multiplicador:bloco_operativo|teste:test|p[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal bo_multiplicador:bloco_operativo|registrador:regB|q[3]
-Warning (13012): Latch bc_multiplicador:bloco_controle|cA has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal bc_multiplicador:bloco_controle|state.S1
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "pronto" is stuck at GND
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (12128): Elaborating entity "registrador_unsigned" for hierarchy "TP1_bo:bo0|registrador_unsigned:regOp"
+Warning (10492): VHDL Process Statement warning at registrador_unsigned.vhd(16): signal "carga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "ula" for hierarchy "TP1_bo:bo0|ula:ula0"
+Warning (10036): Verilog HDL or VHDL warning at ula.vhd(19): object "a_temp" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at ula.vhd(19): object "b_temp" assigned a value but never read
+Warning (10540): VHDL Signal Declaration warning at ula.vhd(21): used explicit default value for signal "tudo_zero" because signal was never assigned a value
+Info (12128): Elaborating entity "somadorsubtrator" for hierarchy "TP1_bo:bo0|ula:ula0|somadorsubtrator:somasub0"
+Info (12128): Elaborating entity "booth_multiplier_4bits" for hierarchy "TP1_bo:bo0|ula:ula0|booth_multiplier_4bits:booth0"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 133 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 113 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 614 megabytes
-    Info: Processing ended: Sat Jun 18 00:37:13 2022
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info (21057): Implemented 129 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 111 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4640 megabytes
+    Info: Processing ended: Sat Jun 18 02:40:35 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

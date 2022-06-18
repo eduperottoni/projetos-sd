@@ -1,0 +1,225 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do ula_multiplicador_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {ula_multiplicador.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity TP1
+# -- Compiling architecture structure of TP1
+# 
+vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1
+# vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1 
+# ** Error: (vsim-SDF-3196) Failed to find SDF file "C:/Users/edupe/OneDrive/√Årea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo".
+# 
+# Error loading design
+vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1
+# vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1 
+# ** Error: (vsim-SDF-3196) Failed to find SDF file "C:/Users/edupe/OneDrive/√Årea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo".
+# 
+# Error loading design
+vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui work.tp1
+# vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui work.tp1 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.tp1(structure)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim Altera version. Expect performance to be adversely affected.
+# do ula_multiplicador_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {ula_multiplicador.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity TP1
+# -- Compiling architecture structure of TP1
+# 
+add wave -position end  sim:/tp1/clk
+add wave -position end  sim:/tp1/inicio
+add wave -position end  sim:/tp1/reset
+add wave -position end  sim:/tp1/dado
+add wave -position end  sim:/tp1/s_low
+add wave -position end  sim:/tp1/s_high
+add wave -position end  sim:/tp1/flagZ
+add wave -position end  sim:/tp1/flagOvf
+add wave -position end  sim:/tp1/flagN
+do simulation_TP1.do
+# ** Error: (vsim-4026) Value "00000000" does not represent a literal of the enumeration type.
+# ** Error: (vsim-4011) Invalid force value: 00000000 0 ns.
+# Error in macro ./simulation_TP1.do line 5
+# ** Error: (vsim-4026) Value "00000000" does not represent a literal of the enumeration type.
+# ** Error: (vsim-4011) Invalid force value: 00000000 0 ns.
+# 
+#     while executing
+# "force -freeze sim:/TP1/inicio 00000000 0 ns"
+do simulation_TP1.do
+vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1
+# vsim -do ula_multiplicador_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/=C:/Users/edupe/OneDrive/¡rea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo} work.tp1 
+# ** Error: (vsim-SDF-3196) Failed to find SDF file "C:/Users/edupe/OneDrive/√Årea de Trabalho/TP1_FINAL/projetos-sd/ula_multiplicador/simulation/modelsim/ula_multiplicador_vhd.sdo".
+# 
+# Error loading design
+do simulation_TP1.do
+# ** Error: (vish-4008) Object '/clk' not found.
+# Error in macro ./simulation_TP1.do line 8
+# ** Error: (vish-4008) Object '/clk' not found.
+# 
+#     while executing
+# "force /clk 0 0ns, 1 5ns -r 10ns"
+do simulation_TP1.do
+# ** Error: Dataset not found: sim
+# Error in macro ./simulation_TP1.do line 8
+# Dataset not found: sim
+#     while executing
+# "force sim:/TP1/clk 0 0ns, 1 5ns -r 10ns"
+do simulation_TP1.do
+# ** Error: Dataset not found: sim
+# Error in macro ./simulation_TP1.do line 8
+# Dataset not found: sim
+#     while executing
+# "force -freeze sim:/TP1/clk 0 0ns, 1 5ns -r 10ns"
+vsim work.tp1
+# vsim work.tp1 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.tp1(structure)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim Altera version. Expect performance to be adversely affected.
+add wave -position end  sim:/tp1/clk
+add wave -position end  sim:/tp1/inicio
+add wave -position end  sim:/tp1/reset
+add wave -position end  sim:/tp1/dado
+add wave -position end  sim:/tp1/s_low
+add wave -position end  sim:/tp1/s_high
+add wave -position end  sim:/tp1/flagZ
+add wave -position end  sim:/tp1/flagOvf
+add wave -position end  sim:/tp1/flagN
+do simulation_TP1.do
+restart
+add wave -position end  sim:/tp1/clk
+add wave -position end  sim:/tp1/inicio
+add wave -position end  sim:/tp1/reset
+add wave -position end  sim:/tp1/dado
+add wave -position end  sim:/tp1/s_low
+add wave -position end  sim:/tp1/s_high
+add wave -position end  sim:/tp1/flagZ
+add wave -position end  sim:/tp1/flagOvf
+add wave -position end  sim:/tp1/flagN
+do simulation_TP1.do
+do simulation.do
+# ** Error: (vish-4008) Object 'sim:/TP1/entA' not found.
+# Error in macro ./simulation.do line 2
+# ** Error: (vish-4008) Object 'sim:/TP1/entA' not found.
+# 
+#     while executing
+# "force -freeze sim:/TP1/entA 0110 0 ns,  0010 20 ns, 0000 40 ns, 1111 60 ns, 0111 80 ns, 0111 100 ns, 0110 120 ns"
+do simulation_TP1.do
+restart
+do simulation.do
+# ** Error: (vish-4008) Object 'sim:/TP1/entA' not found.
+# Error in macro ./simulation.do line 2
+# ** Error: (vish-4008) Object 'sim:/TP1/entA' not found.
+# 
+#     while executing
+# "force -freeze sim:/TP1/entA 0110 0 ns,  0010 20 ns, 0000 40 ns, 1111 60 ns, 0111 80 ns, 0111 100 ns, 0110 120 ns"
+do simulation_TP1.do
+add wave -position end  sim:/tp1/clk
+add wave -position end  sim:/tp1/inicio
+add wave -position end  sim:/tp1/reset
+add wave -position end  sim:/tp1/dado
+add wave -position end  sim:/tp1/s_low
+add wave -position end  sim:/tp1/s_high
+add wave -position end  sim:/tp1/flagZ
+add wave -position end  sim:/tp1/flagOvf
+add wave -position end  sim:/tp1/flagN
+restart
+do simulation_TP1.do
+add wave -position end  sim:/tp1/clk
+add wave -position end  sim:/tp1/inicio
+add wave -position end  sim:/tp1/reset
+add wave -position end  sim:/tp1/dado
+add wave -position end  sim:/tp1/s_low
+add wave -position end  sim:/tp1/s_high
+add wave -position end  sim:/tp1/flagZ
+add wave -position end  sim:/tp1/flagOvf
+add wave -position end  sim:/tp1/flagN
+restart
+do simulation_TP1.do
+add wave -position end  sim:/tp1/clk
+add wave -position end  sim:/tp1/inicio
+add wave -position end  sim:/tp1/reset
+add wave -position end  sim:/tp1/dado
+add wave -position end  sim:/tp1/s_low
+add wave -position end  sim:/tp1/s_high
+add wave -position end  sim:/tp1/flagZ
+add wave -position end  sim:/tp1/flagOvf
+add wave -position end  sim:/tp1/flagN
+do simulation_TP1.do
+restart
+restart
+do simulation_TP1.do
+add wave -position end  sim:/tp1/clk
+add wave -position end  sim:/tp1/inicio
+add wave -position end  sim:/tp1/reset
+add wave -position end  sim:/tp1/dado
+add wave -position end  sim:/tp1/s_low
+add wave -position end  sim:/tp1/s_high
+add wave -position end  sim:/tp1/flagZ
+add wave -position end  sim:/tp1/flagOvf
+add wave -position end  sim:/tp1/flagN

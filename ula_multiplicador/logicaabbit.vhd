@@ -20,13 +20,15 @@ begin
 	abit <= Zeros(n-1 downto 0);
 	bbit <= zeros(n-1 downto 0);
 
-	for I in 0 to N-1 loop
-		abit <= abit + a(I);
-		bbit <= bbit + b(I);
-	end loop;
+	--for I in 0 to N-1 loop
+		--abit <= abit + a(I);
+		--bbit <= bbit + b(I);
+		abit <= (zeros(n-1 downto 1)&a(3)) +(zeros(n-1 downto 1)&a(2))+(zeros(n-1 downto 1)&a(1))+(zeros(n-1 downto 1)&a(0));
+		bbit <= (zeros(n-1 downto 1)&b(3))+(zeros(n-1 downto 1)&b(2))+(zeros(n-1 downto 1)&b(1))+(zeros(n-1 downto 1)&b(0));
+	--end loop;
 	 
    resultA <= abit;
-    resultB <= bbit;
+	resultB <= bbit;
 				 
 end process;
 
