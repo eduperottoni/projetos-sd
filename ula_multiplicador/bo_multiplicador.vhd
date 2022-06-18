@@ -1,6 +1,5 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
 USE ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.ALL;
 
@@ -9,11 +8,11 @@ ENTITY bo_multiplicador IS
 GENERIC(N: natural := 4);
 PORT (clk : IN STD_LOGIC;
       ini, pronto, cSaida, cMultiplicando, cMultiplicador, cP, cA, cB, cM, cBbit, cAbit: IN STD_LOGIC;
-      entA, entB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+      entA, entB : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
       mM, mMul, mP, mB, mMultiplicador: IN STD_LOGIC;
 	   Az, Bz, multZ: OUT STD_LOGIC;
 	   Abit, Bbit: OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
-      saida: OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
+      saida: OUT STD_LOGIC_VECTOR(N*2-1 DOWNTO 0));
 END bo_multiplicador;
 
 ARCHITECTURE estrutura OF bo_multiplicador IS
@@ -38,38 +37,30 @@ ARCHITECTURE estrutura OF bo_multiplicador IS
 		igual : OUT STD_LOGIC);
 	END COMPONENT;
 	
-	COMPONENT logica_a_b_bit IS
+	COMPONENT logicaabbit IS
 		GENERIC (N: natural := 4);
 		PORT (A, B: IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
        resultA, resultB: OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0));
 	END COMPONENT;
 	
-	component mux2para1_integer IS
-		GENERIC (N: natural := 4); --N DE BITS DAS DUAS POSSIBILIDADES
-		PORT ( a, b : IN integer;
-				sel: IN STD_LOGIC;
-				y : OUT integer);
-	END component;
-	
-	component registrador_integer IS
+	COMPONENT teste IS
 		GENERIC (N: natural := 4);
-		PORT (clk, carga : IN STD_LOGIC;
-			  d : IN integer;
-			  q : OUT integer);
-	END component;
-		
+		PORT(A, B: IN std_logic_vector(N-1 DOWNTO 0);
+			  Abit, Bbit: IN std_logic_vector(N-1 DOWNTO 0);
+           result : OUT std_logic_vector(2*N-1 DOWNTO 0));
+	END COMPONENT;
+	
 	SIGNAL saimux1, sairegA, sairegB, sairegmultiplicando, sairegmultiplicador, saireg: STD_LOGIC_VECTOR (N-1 DOWNTO 0);
 	SIGNAL saimuxmultiplicando, saimux1multiplicador, saimux2multiplicador: STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 	
-	SIGNAL somaP, saimuxP, sairegP, sairegSaida, multiplicando: STD_LOGIC_VECTOR(N*2-1 DOWNTO 0);
-	SIGNAL saimuxM, sairegM, subM: integer;
+	SIGNAL somaP, saimuxP, sairegP, sairegSaida: STD_LOGIC_VECTOR(N*2-1 DOWNTO 0);
+	SIGNAL saimuxM, sairegM, subM, subNM, sAbit, sBbit: STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 
-	SIGNAL tudo_zero: STD_LOGIC_VECTOR(2*N-1 DOWNTO 0) := (others => '0');
+	SIGNAL tudo_zero, multiplicando: STD_LOGIC_VECTOR(2*N-1 DOWNTO 0) := (others => '0');
 	SIGNAL m: integer;
-	signal stdN : std_logic_vector(N downto 0);
-	signal teste: STD_LOGIC_VECTOR(n DOWNTO 0);
+	signal stdN : std_logic_vector(N-1 downto 0);
 
-BEGIN
+BEGIN    
     -- registrador A
     regA: registrador GENERIC MAP(N)
 		PORT MAP(clk => clk,
@@ -139,42 +130,38 @@ BEGIN
 
     -- FIXME: não tenho certeza se isso funciona como o esperado
     -- concatenação do multiplicando
-	 -- multiplicando(N*2-1 DOWNTO 0) <= aux&aux;
-	 --m <= conv_integer(unsigned(sairegM));
-    --multiplicando <= (aux(N-M downto 0) & sairegmultiplicando & ;
-
-    
+	 m <= conv_integer(unsigned(sairegM));
+	 
+	 -- multiplicando <= sairegmultiplicando & "0"*m;
+   
     -- mux P
-    muxP: mux2para1 GENERIC MAP(2*N)
+    muxP: mux2para1 GENERIC MAP(N*2)
 		PORT MAP(a => somaP,
 		        b => tudo_zero, 
 		        sel => mP, 
 		        y => saimuxP);
 
     -- registador P
-    regP: registrador GENERIC MAP(2*N)
+    regP: registrador GENERIC MAP(N*2)
 		PORT MAP(clk => clk,
 		        carga => cP,
 		        d => saimuxP,
 		        q => sairegP);
 
     -- FIXME: não sei se está funcionando certinho
+	 test: teste GENERIC MAP(N)
+		PORT MAP(A => sairegA, 
+					B => sairegB,
+					Abit => sAbit,
+					Bbit => sBbit,
+					result => somaP);
+		
     -- soma de P c/ multiplicando
-	 process(sairegM)
-		variable m : integer := N;
-		variable teste : std_logic_vector(N-1 downto 0) := tudo_zero(N-1 downto 0); 
-	 begin
-		for I in 1 to M loop
-        teste := teste & '0';
-		end loop;
-		m := sairegM;
-		teste := tudo_zero(m - 1 downto 0);
-	 end process;
-		somaP <= (sairegmultiplicando & teste) + sairegP;
-		 
- 
+    -- somaP <= multiplicando + sairegP;
+    
+
     -- registrador de saída
-    regSaida: registrador GENERIC MAP(2*N)
+    regSaida: registrador GENERIC MAP(N*2)
 		PORT MAP(clk => clk,
 		        carga => cSaida,
 		        d => sairegP,
@@ -182,30 +169,31 @@ BEGIN
     
     -- LOGICA M
     -- mux M
-	 --stdN <= conv_std_logic_vector(N, stdN'length);
-    muxM: mux2para1_integer GENERIC MAP(N)
+	 stdN <= conv_std_logic_vector(N, stdN'length);
+    muxM: mux2para1 GENERIC MAP(N)
 		PORT MAP(a => subM,
-		        b => N,
+		        b => stdN,
 		        sel => mM, 
 		        y => saimuxM);
 
     -- registrador do M
-    regm: registrador_integer GENERIC MAP(N)
+    regm: registrador GENERIC MAP(N)
 		PORT MAP(clk => clk,
 		        carga => cM,
 		        d => saimuxM,
 		        q => sairegM);
 
     -- subtração do M
-    subM <= sairegM - 1;
+    subM <= sairegM - '1';
     
     -- TODO:LOGICA Abit
-    geraABbit: logica_a_b_bit GENERIC MAP(N)
+    geraABbit: logicaabbit GENERIC MAP(N)
         PORT MAP(A => entA,
                  B => entB,
-                 resultA => Abit,
-                 resultB => Bbit);
+                 resultA => sAbit,
+                 resultB => sBbit);
 	
 	saida <= sairegSaida;
-
+	Abit <= sAbit;
+	Bbit <= sBbit;
 END estrutura;
