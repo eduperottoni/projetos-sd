@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity maquina_cafe is 
 port (
-	clk, reset: in std_logic;
+	clk, reset, CP, CG, moeda_25, moeda_50, moeda_1, fazer: in std_logic;
 	Lib_grande, Lib_pequeno : out std_logic
 );
 end maquina_cafe;
@@ -21,7 +21,7 @@ component maquina_cafe_bc is port (
 	cSoma, cCredito, zeraCredito : out std_logic
 );
 end component;	
-signal CP, CG, moeda_25, moeda_50, moeda_1, fazer, cSoma, cCredito, zeraCredito: STD_logic;
+signal cSoma, cCredito, zeraCredito: STD_logic;
 signal Lib_grandee, Lib_pequenoo : std_logic;
 begin
 bc : maquina_cafe_bc port map(clk, reset, moeda_25, moeda_50, moeda_1, CP, CG, fazer, cSoma, cCredito, zeraCredito);
