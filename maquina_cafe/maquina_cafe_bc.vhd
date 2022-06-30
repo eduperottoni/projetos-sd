@@ -1,14 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity maquina_cafe is 
+entity maquina_cafe_bc is 
 port (
 	clk, reset, moeda_25, moeda_50, moeda_1, cafe_pq, cafe_gr, fazer : in std_logic;
 	cSoma, cCredito, zeraCredito : out std_logic
 );
-end maquina_cafe;
+end maquina_cafe_bc;
 
-architecture arch of maquina_cafe is
+architecture arch of maquina_cafe_bc is
 	type type_state is (rst, input, acum, slct, check, lib_gr, lib_pq);
 	signal state: type_state; 
 	signal credito : integer;
