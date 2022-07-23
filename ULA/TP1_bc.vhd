@@ -1,14 +1,14 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-ENTITY bc IS
+ENTITY TP1_bc IS
 PORT (rst, clk: IN STD_LOGIC;
       op_code: IN STD_LOGIC_VECTOR(3 downto 0);
 		pronto: IN STD_LOGIC;
       en_PC, en_A, en_B, en_op, en_out, reset_PC: OUT STD_LOGIC );
-END bc;
+END TP1_bc;
 
-ARCHITECTURE estrutura OF bc IS
+ARCHITECTURE estrutura OF TP1_bc IS
 	TYPE state_type IS (reset, carrega_OP, carrega_A, carrega_B, calcula, carrega_saida);
 	SIGNAL state: state_type;
 BEGIN
