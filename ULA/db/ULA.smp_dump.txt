@@ -1,0 +1,9 @@
+
+State Machine - |bc|state
+Name state.carrega_saida state.calcula state.carrega_B state.carrega_A state.carrega_OP state.reset 
+state.reset 0 0 0 0 0 0 
+state.carrega_OP 0 0 0 0 1 1 
+state.carrega_A 0 0 0 1 0 1 
+state.carrega_B 0 0 1 0 0 1 
+state.calcula 0 1 0 0 0 1 
+state.carrega_saida 1 0 0 0 0 1 

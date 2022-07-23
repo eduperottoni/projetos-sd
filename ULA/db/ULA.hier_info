@@ -1,0 +1,32 @@
+|bc
+rst => state~6.DATAIN
+clk => state~4.DATAIN
+op_code[0] => Equal0.IN3
+op_code[0] => Equal1.IN3
+op_code[0] => Equal2.IN3
+op_code[0] => Equal3.IN2
+op_code[0] => Equal4.IN3
+op_code[1] => Equal0.IN2
+op_code[1] => Equal1.IN2
+op_code[1] => Equal2.IN2
+op_code[1] => Equal3.IN1
+op_code[1] => Equal4.IN1
+op_code[2] => Equal0.IN1
+op_code[2] => Equal1.IN1
+op_code[2] => Equal2.IN1
+op_code[2] => Equal3.IN3
+op_code[2] => Equal4.IN2
+op_code[3] => Equal0.IN0
+op_code[3] => Equal1.IN0
+op_code[3] => Equal2.IN0
+op_code[3] => Equal3.IN0
+op_code[3] => Equal4.IN0
+pronto => state.DATAB
+pronto => Selector1.IN3
+en_PC <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+en_A <= en_A.DB_MAX_OUTPUT_PORT_TYPE
+en_B <= en_B.DB_MAX_OUTPUT_PORT_TYPE
+en_op <= en_op.DB_MAX_OUTPUT_PORT_TYPE
+en_out <= en_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
