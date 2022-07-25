@@ -50,7 +50,7 @@ begin
 	
 	--RESULTADO DO MULTIPLICADOR
 	
-	booth0 : booth_multiplier_4bits 
+	booth0 : booth_multiplier_8bits 
 		generic map(N)
 		port map(std_logic_vector(a), std_logic_vector(b), mult_result_std);
 		
