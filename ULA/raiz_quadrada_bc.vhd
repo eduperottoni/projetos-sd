@@ -4,8 +4,8 @@ use IEEE.numeric_std.all;
 
 entity raiz_quadrada_bc is
 	generic(N: natural := 8);
-	port(entrada: in signed(N-1 downto 0);	
-		  start, reset, clock, teste_moui: in std_logic;
+	port(entrada, soma_parcial: in signed(N-1 downto 0);	
+		  start, reset, clock: in std_logic;
 		  c_zerado, c_pronto ,c_erro, c_setar_var, c_somar_quad, c_carregar_saida, c_carregar_vars: out std_logic);
 end raiz_quadrada_bc;
 
@@ -19,7 +19,8 @@ begin
 	begin
 		if reset = '1' then
 			state <= ZERADO;
-		elsif clock'event and clock = '1' then
+		else 
+			if clock'event and clock = '1' then
 				case state is
 					when ZERADO =>
 						if start = '1' then
@@ -40,10 +41,10 @@ begin
 					when SET_VAR =>
 						state <= TESTA_MOUI;
 					when TESTA_MOUI =>
-						if teste_moui = '1' then
-							state <= SET_N;
-						else
+						if soma_parcial >= entrada then
 							state <= PRONTO;
+						else
+							state <= SET_N;
 						end if;
 					when SET_N => 
 						state <= SOMA;
@@ -52,6 +53,7 @@ begin
 					when PRONTO => 
 						state <= ZERADO;
 				end case;
+			end if;
 		end if;
 	end process;
 	
@@ -60,7 +62,7 @@ begin
 	BEGIN
 		CASE state IS
 			WHEN ZERADO =>
-				c_zerado <= '0';
+				c_zerado <= '1';
 				c_pronto <= '0';
 				c_erro <= '0';
 				c_setar_var <= '0';
@@ -87,14 +89,15 @@ begin
 				c_zerado <= '0';
 				c_pronto <= '0';
 				c_erro <= '0';
-				c_setar_var <= '0';
+				c_setar_var <= '1';
 				c_somar_quad <= '0';
 				c_carregar_saida <= '0';
-				c_carregar_vars <= '1';
+				c_carregar_vars <= '0';
 			WHEN SET_N => --carrega n_current e n_double
 				c_zerado <= '0';
 				c_pronto <= '0';
 				c_erro <= '0';
+				c_setar_var <= '0';
 				c_somar_quad <= '0';
 				c_carregar_saida <= '0';
 				c_carregar_vars <= '1';
