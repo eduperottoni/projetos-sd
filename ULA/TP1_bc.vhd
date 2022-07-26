@@ -2,10 +2,10 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY TP1_bc IS
-PORT (rst, clk: IN STD_LOGIC;
+PORT (rst, clk,inicio: IN STD_LOGIC;
       op_code: IN STD_LOGIC_VECTOR(3 downto 0);
 		pronto: IN STD_LOGIC;
-      en_PC, en_A, en_B, en_op, en_out, reset_PC: OUT STD_LOGIC );
+      en_PC, en_A, en_B, en_op, en_out, reset_PC, calcular: OUT STD_LOGIC );
 END TP1_bc;
 
 ARCHITECTURE estrutura OF TP1_bc IS
@@ -19,7 +19,11 @@ BEGIN
 		ELSIF (clk'EVENT AND clk = '1') THEN
 			CASE state IS
 				WHEN reset =>
-					state <= carrega_OP;
+					if inicio = '1' then
+						state <= carrega_OP;
+					else 
+						state <= reset;
+					end if;
 
 				WHEN carrega_OP =>
 					IF op_code = "0000" THEN
@@ -65,6 +69,8 @@ BEGIN
 				en_out <= '0';
 				en_op <= '0';
 				reset_PC <= '1';
+				calcular <= '0';
+
 
 			WHEN carrega_OP =>
 				en_PC <= '1';
@@ -73,6 +79,8 @@ BEGIN
 				en_out <= '0';
 				en_op <= '1';
 				reset_PC <= '0';
+				calcular <= '0';
+
 
 			WHEN carrega_A =>
 				en_PC <= '1';
@@ -81,6 +89,8 @@ BEGIN
 				en_out <= '0';
 				en_op <= '1';
 				reset_PC <= '0';
+				calcular <= '0';
+
 
 			WHEN carrega_B =>
 				en_PC <= '1';
@@ -89,6 +99,8 @@ BEGIN
 				en_out <= '0';
 				en_op <= '0';
 				reset_PC <= '0';
+				calcular <= '0';
+
 
 			WHEN calcula =>
 				en_PC <= '0';
@@ -97,6 +109,7 @@ BEGIN
 				en_out <= '0';
 				en_op <= '0';
 				reset_PC <= '0';
+				calcular <= '1';
 
 			WHEN carrega_saida => 
 				en_PC <= '0';
@@ -105,6 +118,8 @@ BEGIN
 				en_out <= '1';
 				en_op <= '0';
 				reset_PC <= '0';
+				calcular <= '0';
+
 
 		END CASE;
 	END PROCESS;

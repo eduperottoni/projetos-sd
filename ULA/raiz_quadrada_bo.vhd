@@ -8,7 +8,7 @@ entity raiz_quadrada_bo is
 		  clock: in std_logic;
 		  c_zerado, c_pronto ,c_erro, c_setar_var, c_somar_quad, c_carregar_saida, c_carregar_vars: in std_logic;
 		  pronto, erro: out std_logic := '0';
-		  resultado, resultado_2n, resultado_n, soma_parcial: out signed(N-1 downto 0));
+		  resultado: out signed(N-1 downto 0));
 end raiz_quadrada_bo;
 
 architecture arch of raiz_quadrada_bo is
@@ -56,9 +56,7 @@ begin
 				s_2n <= s_2n + 2;
 			end if;
 		end if;
-		resultado_2n <= s_2n;
-		resultado_n <= s_n;
-		soma_parcial <= s_soma;
+
 	end process;
 	
 		

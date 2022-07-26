@@ -3,24 +3,29 @@ use ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
 entity ula is 
-	generic (N : natural := 4);
+	generic (N : natural := 8);
 	port (
 		a, b: in signed(N-1 downto 0);
-		op: in std_logic_vector(2 downto 0);
+		op: in std_logic_vector(3 downto 0);
+		calcular: in std_logic;
+		clock : in std_logic;
 		s_low: out signed(N-1 downto 0); 
 		s_high: out signed(N-1 downto 0);
-		flag_z_n_ovf: out std_logic_vector(2 downto 0)
+		flag_z_n_ovf_e: out std_logic_vector(3 downto 0);
+		pronto: out std_logic
 	);
 end ula;
 
 architecture arch of ula is
 	signal mult_result_std : std_logic_vector(2*N-1 downto 0);
 	signal mult_result, mult_result_final: signed(2*N-1 downto 0);
-	signal soma_temp, somasub_result, s_low_temp, s_high_temp, a_temp, b_temp: signed(N-1 downto 0);
-	signal somasub_op, somasub_ovf, mult_ovf, ovf_temp, overflow, zero, negative: std_logic;
+	signal soma_temp, somasub_result, s_low_temp, s_high_temp, a_temp, b_temp, result_raiz: signed(N-1 downto 0);
+	signal somasub_op, somasub_ovf, mult_ovf, ovf_temp, overflow, zero, negative, error: std_logic;
 	signal tudo_zero: std_logic_vector(N-1 downto 0) := (others => '0');
 	signal tudo_um: std_logic_vector(N-1 downto 0) := (others => '1');
 	signal um: signed(N-1 downto 0) := (0 => '1', others => '0');
+	signal nulo: std_logic := '0';
+	signal pronto_s: std_logic;
 	
 	component booth_multiplier_8bits is
 		GENERIC (N : NATURAL := 8);
@@ -38,6 +43,13 @@ architecture arch of ula is
 	end component;
 	
 	
+component raiz_quadrada is
+	generic(N: natural := 8);
+	port(entrada: signed(N-1 downto 0);	
+		  clock, start, reset: in std_logic;
+		  pronto, erro: out std_logic;
+		  resultado: out signed(N-1 downto 0));
+end component;
 
 	
 begin
@@ -49,6 +61,9 @@ begin
 		port map (a, soma_temp, somasub_op, somasub_ovf, somasub_result);
 	
 	--RESULTADO DO MULTIPLICADOR
+	raiz0 : raiz_quadrada
+		generic map(n)
+		port map (a,clock,calcular,nulo,pronto_s,error,result_raiz);
 	
 	booth0 : booth_multiplier_8bits 
 		generic map(N)
@@ -69,9 +84,9 @@ begin
 					  not(a) when "0101",
 					  a and b when "0110",
 					  a or b when "0111",
-					  a xor b when "0111",
-					  mult_result(N-1 downto 0) when "1001",
-					  --raiz when "1010",
+					  a xor b when "1000",
+					  mult_result(n-1 dowNTO 0) when "1001",
+					  result_raiz(n-1 dowNTO 0) when "1010",
 					  signed(tudo_zero) when others;
 					  
 	s_low <= s_low_temp;
@@ -92,6 +107,8 @@ begin
 		
 	negative <= '1' when ((s_high_temp(N-1) = '1')) else '0';
 	
-	flag_z_n_ovf <= zero&negative&overflow;
+	pronto <= pronto_s when op = "1010" else '1';
+	
+	flag_z_n_ovf_e <= zero&negative&overflow&error;
 
 end arch;
