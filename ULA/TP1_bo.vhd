@@ -91,5 +91,5 @@ BEGIN
 	flagOvf <= s_regFlagZNOvfe(1);
 	flagError <= s_regFlagZNOvfe(0);
 	--opcode
-	opcode <= dado(3 downto 0);
+	opcode <= signed(s_regOp);
 END estrutura;

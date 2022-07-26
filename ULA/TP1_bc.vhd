@@ -16,45 +16,47 @@ BEGIN
 	BEGIN
 		if(rst = '1') THEN
 			state <= reset;
-		ELSIF (clk'EVENT AND clk = '1') THEN
-			CASE state IS
-				WHEN reset =>
-					if inicio = '1' then
-						state <= carrega_OP;
-					else 
-						state <= reset;
-					end if;
+		else
+			if (clk'EVENT AND clk = '1') THEN
+				CASE state IS
+					WHEN reset =>
+						if inicio = '1' then
+							state <= carrega_OP;
+						else 
+							state <= reset;
+						end if;
 
-				WHEN carrega_OP =>
-					IF op_code = "0000" THEN
-						state <= carrega_OP;
-					ELSIF op_code = "1111" THEN
-						state <= reset;
-					ELSE
-						state <= carrega_A;
-					END IF;
+					WHEN carrega_OP =>
+						IF op_code = "0000" THEN
+							state <= carrega_OP;
+						ELSIF op_code = "1111" THEN
+							state <= reset;
+						ELSE
+							state <= carrega_A;
+						END IF;
 
-				WHEN carrega_A =>
-					IF op_code = "0011" or op_code = "0100" or op_code = "0101" or op_code = "0100" THEN
+					WHEN carrega_A =>
+						IF op_code = "0011" or op_code = "0100" or op_code = "0101" or op_code = "0100" THEN
+							state <= calcula;
+						ELSE
+							state <= carrega_B;
+						END IF;
+
+					WHEN carrega_B =>
 						state <= calcula;
-					ELSE
-						state <= carrega_B;
-					END IF;
 
-				WHEN carrega_B =>
-					state <= calcula;
+					WHEN calcula =>
+						IF pronto = '1' THEN
+							state <= carrega_saida;
+						ELSE
+							state <= calcula;
+						END IF;
 
-				WHEN calcula =>
-					IF pronto = '1' THEN
-						state <= carrega_saida;
-					ELSE
-						state <= calcula;
-					END IF;
+					WHEN carrega_saida =>
+						state <= carrega_OP;
 
-				WHEN carrega_saida =>
-					state <= carrega_OP;
-
-			END CASE;
+				END CASE;
+			end if;
 		END IF;
 	END PROCESS;
 	
@@ -87,7 +89,7 @@ BEGIN
 				en_A <= '1';
 				en_B <= '0';
 				en_out <= '0';
-				en_op <= '1';
+				en_op <= '0';
 				reset_PC <= '0';
 				calcular <= '0';
 
