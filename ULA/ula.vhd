@@ -89,6 +89,16 @@ begin
 					  result_raiz(n-1 dowNTO 0) when "1010",
 					  signed(tudo_zero) when others;
 					  
+	process(op)
+	begin
+		if op = "1010" then
+			pronto <= pronto_s;
+		else
+			pronto <= '1';
+		end if;
+		--pronto <= pronto_s when op = "1010" else '1';
+	end process;
+					  
 	s_low <= s_low_temp;
 	s_high <= s_high_temp;
 				 
@@ -107,7 +117,7 @@ begin
 		
 	negative <= '1' when ((s_high_temp(N-1) = '1')) else '0';
 	
-	pronto <= pronto_s when op = "1010" else '1';
+	
 	
 	flag_z_n_ovf_e <= zero&negative&overflow&error;
 

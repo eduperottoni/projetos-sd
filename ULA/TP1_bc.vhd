@@ -65,7 +65,7 @@ BEGIN
 	BEGIN
 		CASE state IS
 			WHEN reset =>
-				en_PC <= '0';
+				en_PC <= '1';
 				en_A <= '0';
 				en_B <= '0';
 				en_out <= '0';

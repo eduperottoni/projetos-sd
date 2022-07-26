@@ -41,7 +41,7 @@ begin
 					when SET_VAR =>
 						state <= TESTA_MOUI;
 					when TESTA_MOUI =>
-						if soma_parcial >= entrada then
+						if soma_parcial > entrada then
 							state <= PRONTO;
 						else
 							state <= SET_N;
@@ -56,7 +56,7 @@ begin
 			end if;
 		end if;
 	end process;
-	
+
 	-- Logica de saida
 	PROCESS (state)
 	BEGIN
