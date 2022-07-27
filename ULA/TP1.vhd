@@ -5,9 +5,10 @@ USE ieee.numeric_std.all;
 ENTITY TP1 IS 
 	generic (N : natural := 8 );
 	PORT (clk, inicio, reset : IN STD_LOGIC;
-			s_low, s_high : OUT SIGNED (N-1 DOWNTO 0);
+			s_low, s_high : OUT std_LOGIC_VECTOR(N-1 DOWNTO 0);
 			flagZ, flagOvf, flagN, flagError, enable_PC, ENABLE_A, enable_b, enable_op, calcular_sinal: out std_logic;
-			opcode_teste: out std_LOGIC_VECTOR(3 downto 0));
+			opcode_teste: out std_LOGIC_VECTOR(3 downto 0);
+			pronto_sinal: out std_logic);
 	END TP1;
 
 ARCHITECTURE estrutura OF TP1 IS
@@ -31,11 +32,12 @@ ARCHITECTURE estrutura OF TP1 IS
 
 	signal enablePC, enableA, enableB, enableOp, enableOut, rstPc, s_pronto,s_calcular: std_logic;
 	signal opcode_sinal, saia_s, saib_s: std_logic_vector(3 downto 0);
+	signal s_low_s, s_high_s: signed(N-1 downto 0);
 
 BEGIN
 
 	bc0: TP1_bc port map (reset, clk,inicio, opcode_sinal, s_pronto, enablePC, enableA, enableB, enableOp, enableOut, rstPC,s_calcular);
-	bo0: TP1_bo generic map(N) port map (clk, enablePC, enableA, enableB, enableOp, enableOut, rstPc,s_calcular, s_low, s_high, flagZ, flagN, flagOvf,flagError, s_pronto, opcode_sinal);
+	bo0: TP1_bo generic map(N) port map (clk, enablePC, enableA, enableB, enableOp, enableOut, rstPc,s_calcular, s_low_s, s_high_s, flagZ, flagN, flagOvf,flagError, s_pronto, opcode_sinal);
 	
 	enable_PC <= enablePC;
 	ENABLE_A <= EnableA;
@@ -43,5 +45,9 @@ BEGIN
 	enable_op <= enableOp;
 	calcular_sinal <= s_calcular;
 	opcode_teste <= opcode_sinal;
+	s_low <= std_LOGIC_VECTOR(s_low_s);
+	S_high <= std_LOGIC_VECTOR(s_high_s);
+	pronto_sinal <= s_pronto;
+	
 	
 END estrutura;

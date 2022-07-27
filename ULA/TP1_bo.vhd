@@ -8,7 +8,7 @@ PORT (clk : IN STD_LOGIC;
       enPC, enA, enB, enOp, enOut, resetPC, calcular : IN STD_LOGIC;
       s_low, s_high : OUT SIGNED (N-1 DOWNTO 0);
       flagZ, flagN, flagOvf, flagError, pronto : OUT std_logic;
-		opcode: out signed (3 downto 0)
+		opcode: out std_logic_vector(3 downto 0)
 		);
 END TP1_bo;
 
@@ -45,17 +45,28 @@ ARCHITECTURE estrutura OF TP1_bo IS
 		  q : OUT std_logic_vector(N-1 DOWNTO 0));
 	END COMPONENT;
 	
+	component registrador_signed IS
+	GENERIC (N: natural := 8);
+	PORT (clk, carga : IN STD_LOGIC;
+		  d : IN signed(N-1 DOWNTO 0);
+		  q : OUT signed(N-1 DOWNTO 0));
+	END component;
+	
+	
 	component ula is 
-		generic (N : natural := 8);
-		port (
-			a, b: in signed(N-1 downto 0);
-			op: in std_logic_vector(3 downto 0);
-			calcular: in std_logic;
-			s_low: out signed(N-1 downto 0); 
-			s_high: out signed(N-1 downto 0);
-			flag_z_n_ovf_e: out std_logic_vector(3 downto 0);
-			pronto : out std_logic );
+	generic (N : natural := 8);
+	port (
+		a, b: in signed(N-1 downto 0);
+		op: in std_logic_vector(3 downto 0);
+		calcular: in std_logic;
+		clock : in std_logic;
+		s_low: out signed(N-1 downto 0); 
+		s_high: out signed(N-1 downto 0);
+		flag_z_n_ovf_e: out std_logic_vector(3 downto 0);
+		pronto: out std_logic
+		);
 	end component;
+
 
 SIGNAL s_regA, s_regB, s_regS_low, s_regS_high, s_low_ula, s_high_ula: SIGNED (N-1 DOWNTO 0);
 SIGNAL s_regOp: std_logic_vector(3 DOWNTO 0);
@@ -71,16 +82,16 @@ BEGIN
 	mem: memROM PORT MAP(sairegPC, dado);
 	
 	--registradores de entrada
-	regA: registrador generic map(N) PORT MAP (clk, enA, dado, s_regA);
-	regB: registrador generic map(N) PORT MAP (clk, enB, dado, s_regB);
+	regA: registrador_signed generic map(N) PORT MAP (clk, enA, dado, s_regA);
+	regB: registrador_signed generic map(N) PORT MAP (clk, enB, dado, s_regB);
 	regOp: registrador_unsigned generic map(4) PORT MAP (clk, enOp, std_logic_vector(dado(3 downto 0)), s_regOp); 
 	
 	--ula (combinacional
-	ula0: ULA generic map(N) PORT MAP (s_regA, s_regB, std_logic_vector(s_regOp), calcular, s_low_ula, s_high_ula, flag_z_n_ovf_e, pronto);
+	ula0: ULA generic map(N) PORT MAP (s_regA, s_regB, std_logic_vector(s_regOp), calcular, clk, s_low_ula, s_high_ula, flag_z_n_ovf_e, pronto);
 	
 	--registradores de saída
-	regS_low: registrador generic map(N) PORT MAP (clk, enOut, s_low_ula, s_regS_low);
-	regS_high: registrador generic map(N) PORT MAP (clk, enOut, s_high_ula, s_regS_high);
+	regS_low: registrador_signed generic map(N) PORT MAP (clk, enOut, s_low_ula, s_regS_low);
+	regS_high: registrador_signed generic map(N) PORT MAP (clk, enOut, s_high_ula, s_regS_high);
 	regflag_z_n_ovf: registrador_unsigned generic map(4) PORT MAP (clk, enOut, flag_z_n_ovf_e, s_regFlagZNOvfe);
 	
 	--pareando saidas dos registradores para as saidads do BO
@@ -91,5 +102,5 @@ BEGIN
 	flagOvf <= s_regFlagZNOvfe(1);
 	flagError <= s_regFlagZNOvfe(0);
 	--opcode
-	opcode <= signed(s_regOp);
+	opcode <= std_logic_vector(s_regOp);
 END estrutura;

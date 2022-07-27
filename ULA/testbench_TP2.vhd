@@ -5,11 +5,11 @@ use std.textio.all;
 use ieee.std_logic_textio.all;
 
 entity testbench_TP2 is
-	generic (N : natural := 8);
+	generic(N : natural := 8);
 end testbench_TP2;	
 
 architecture comp of testbench_TP2 is
-signal s_low, s_high: signed(N-1 downto 0);
+signal s_low, s_high: std_logic_vector(7 downto 0);
 signal inicio, reset, pronto: std_logic;
 signal clk: std_logic := '0';
 signal flagZ, flagOvf, flagN, flagError,enable_PC, ENABLE_A, enable_b, enable_op, calcular_sinal: std_logic;
@@ -20,20 +20,20 @@ constant num_of_clocks : integer := 65;
 signal i : integer := 0;
 
 component TP1 is
-	generic (N : natural := 8 );
+	generic (N : natural := 8);
 	PORT (clk, inicio, reset : IN STD_LOGIC;
-   s_low, s_high: OUT SIGNED (N-1 DOWNTO 0);
+   s_low, s_high: OUT std_logic_vector (N-1 DOWNTO 0);
    flagZ, flagOvf, flagN, flagError, enable_PC, ENABLE_A, enable_b, enable_op, calcular_sinal: OUT std_logic);
 end component;
 
 begin
-	DUT: TP1 generic map (N) port map(clk, inicio, reset, s_low, s_high, flagZ, flagOvf, flagN, flagError, enable_PC, ENABLE_A, enable_b, enable_op, calcular_sinal);
+	DUT: TP1 generic map (8) port map(clk, inicio, reset, s_low, s_high, flagZ, flagOvf, flagN, flagError, enable_PC, ENABLE_A, enable_b, enable_op, calcular_sinal);
 	process
 		begin
 			reset <= '1';
-				wait for 2 ns;
+				wait for 15 ns;
 			reset <= '0'; inicio <= '1';
-				wait;
+				wait for 15 ns;
 	end process;	
 
 	clk_process :process
@@ -51,7 +51,7 @@ begin
         end if;
    end process;
 	
-	file_io: process(s_low, s_high)
+	file_io: process(s_low)
 			variable write_col_to_output_buf : line;
       begin 
 			write(write_col_to_output_buf, std_logic_vector(signed(s_high)));

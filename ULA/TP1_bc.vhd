@@ -36,7 +36,7 @@ BEGIN
 						END IF;
 
 					WHEN carrega_A =>
-						IF op_code = "0011" or op_code = "0100" or op_code = "0101" or op_code = "0100" THEN
+						IF op_code = "0011" or op_code = "0100" or op_code = "0101" or op_code = "1010" THEN
 							state <= calcula;
 						ELSE
 							state <= carrega_B;
