@@ -19,7 +19,7 @@ library ieee;
       type rom_type is array (0 to addr_width-1) of signed(data_width-1 downto 0);
       
       signal rom : rom_type := (
-                              "00000001", -- op A+B (62 = 00111110)
+                              "00000001", -- op A+B (62 = 00111111)
                               "00110011", -- A (50)
                               "00001100", -- B (12)
 										
