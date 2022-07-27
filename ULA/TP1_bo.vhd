@@ -58,7 +58,7 @@ ARCHITECTURE estrutura OF TP1_bo IS
 	end component;
 
 SIGNAL s_regA, s_regB, s_regS_low, s_regS_high, s_low_ula, s_high_ula: SIGNED (N-1 DOWNTO 0);
-SIGNAL s_regOp: std_logic_vector( 3 DOWNTO 0);
+SIGNAL s_regOp: std_logic_vector(3 DOWNTO 0);
 SIGNAL flag_z_n_ovf_e, s_regFlagZNOvfe: std_logic_vector(3 downto 0);
 SIGNAL sairegPC: integer;
 SIGNAL dado: signed(7 downto 0);

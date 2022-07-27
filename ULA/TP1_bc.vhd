@@ -2,7 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY TP1_bc IS
-PORT (rst, clk,inicio: IN STD_LOGIC;
+PORT (rst, clk, inicio: IN STD_LOGIC;
       op_code: IN STD_LOGIC_VECTOR(3 downto 0);
 		pronto: IN STD_LOGIC;
       en_PC, en_A, en_B, en_op, en_out, reset_PC, calcular: OUT STD_LOGIC );
@@ -65,7 +65,7 @@ BEGIN
 	BEGIN
 		CASE state IS
 			WHEN reset =>
-				en_PC <= '1';
+				en_PC <= '0';
 				en_A <= '0';
 				en_B <= '0';
 				en_out <= '0';

@@ -29,19 +29,19 @@ ARCHITECTURE estrutura OF TP1 IS
 			);
 	END COMPONENT;
 
-	signal enablePC, enableA, enableB, enableOp, enableOut, resetPc, pronto,calcular: std_logic;
+	signal enablePC, enableA, enableB, enableOp, enableOut, rstPc, s_pronto,s_calcular: std_logic;
 	signal opcode_sinal, saia_s, saib_s: std_logic_vector(3 downto 0);
 
 BEGIN
 
-	bc0: TP1_bc port map (reset, clk,inicio, opcode_sinal, pronto, enablePC, enableA, enableB, enableOp, enableOut, resetPC,calcular);
-	bo0: TP1_bo generic map(N) port map (clk, enablePC, enableA, enableB, enableOp, enableOut, resetPc,calcular, s_low, s_high, flagZ, flagN, flagOvf,flagError, pronto, opcode_sinal);
+	bc0: TP1_bc port map (reset, clk,inicio, opcode_sinal, s_pronto, enablePC, enableA, enableB, enableOp, enableOut, rstPC,s_calcular);
+	bo0: TP1_bo generic map(N) port map (clk, enablePC, enableA, enableB, enableOp, enableOut, rstPc,s_calcular, s_low, s_high, flagZ, flagN, flagOvf,flagError, s_pronto, opcode_sinal);
 	
 	enable_PC <= enablePC;
 	ENABLE_A <= EnableA;
 	enable_b <= enableB;
 	enable_op <= enableOp;
-	calcular_sinal <= calcular;
+	calcular_sinal <= s_calcular;
 	opcode_teste <= opcode_sinal;
 	
 END estrutura;

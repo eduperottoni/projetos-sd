@@ -1,0 +1,178 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  cycloneii
+Quartus root          :  /home/fernanda/quartus/quartus/linux64/
+Quartus sim root      :  /home/fernanda/quartus/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  vhdl
+Version               :  93
+Simulation Mode       :  GUI
+Sim Output File       :  ULA.vho
+Sim SDF file          :  ULA__vhdl.sdo
+Sim dir               :  simulation/modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script /home/fernanda/quartus/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File ULA_run_msim_gate_vhdl.do already exists - backing up current file as ULA_run_msim_gate_vhdl.do.bak2
+Probing transcript
+ModelSim-Altera Info: # do ULA_run_msim_gate_vhdl.do 
+ModelSim-Altera Info: # if {[file exists gate_work]} {
+ModelSim-Altera Info: # 	vdel -lib gate_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib gate_work
+ModelSim-Altera Info: # vmap work gate_work
+ModelSim-Altera Info: # Copying /home/fernanda/quartus/modelsim_ase/linux/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Warning: # ** Warning: Copied /home/fernanda/quartus/modelsim_ase/linux/../modelsim.ini to modelsim.ini.
+ModelSim-Altera Info: #          Updated modelsim.ini.
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vcom -93 -work work {ULA.vho}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Info: # -- Loading package VITAL_Timing
+ModelSim-Altera Info: # -- Loading package VITAL_Primitives
+ModelSim-Altera Info: # -- Loading package cycloneii_atom_pack
+ModelSim-Altera Info: # -- Loading package cycloneii_components
+ModelSim-Altera Info: # -- Compiling entity TP1
+ModelSim-Altera Info: # -- Compiling architecture structure of TP1
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vcom -93 -work work {/home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Info: # -- Loading package NUMERIC_STD
+ModelSim-Altera Info: # -- Loading package std_logic_textio
+ModelSim-Altera Info: # -- Compiling entity testbench_TP2
+ModelSim-Altera Info: # -- Compiling architecture comp of testbench_TP2
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /NA=ULA_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  testbench_TP2
+ModelSim-Altera Info: # vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /NA=ULA_vhd.sdo -t 1ps testbench_TP2 
+ModelSim-Altera Info: # Loading std.standard
+ModelSim-Altera Info: # Loading std.textio(body)
+ModelSim-Altera Info: # Loading ieee.std_logic_1164(body)
+ModelSim-Altera Info: # Loading ieee.numeric_std(body)
+ModelSim-Altera Info: # Loading ieee.std_logic_textio(body)
+ModelSim-Altera Info: # Loading work.testbench_tp2(comp)
+ModelSim-Altera Info: # SDF 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # Loading ieee.vital_timing(body)
+ModelSim-Altera Info: # Loading ieee.vital_primitives(body)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_atom_pack(body)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_components
+ModelSim-Altera Info: # Loading work.tp1(structure)
+ModelSim-Altera Info: # ** Failure: (vsim-3807) Types do not match between component and entity for port "s_low".
+ModelSim-Altera Info: #    Time: 0 ps  Iteration: 0  Instance: /testbench_tp2/DUT File: ULA.vho Line: 39
+ModelSim-Altera Info: # ** Failure: (vsim-3807) Types do not match between component and entity for port "s_high".
+ModelSim-Altera Info: #    Time: 0 ps  Iteration: 0  Instance: /testbench_tp2/DUT File: ULA.vho Line: 40
+ModelSim-Altera Warning: # ** Warning: (vsim-8713) /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd(30): Suspect default binding for component instance 'DUT'.
+ModelSim-Altera Info: #    Entity has no generics at all; the component has generic:
+ModelSim-Altera Info: #           N
+ModelSim-Altera Info: #         Region: /testbench_tp2/DUT
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_io(structure)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_mux21(altvital)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_dffe(behave)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_asynch_io(behave)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_ena_reg(behave)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_and1(altvital)
+ModelSim-Altera Info: # Fatal error at ULA.vho line 40
+ModelSim-Altera Info: #  while elaborating region: /testbench_tp2/DUT
+ModelSim-Altera Info: # Fatal error in file /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd
+ModelSim-Altera Info: #  while elaborating region: /testbench_tp2
+ModelSim-Altera Info: # Loading instances from ULA_vhd.sdo
+ModelSim-Altera Error: # ** Error: (vsim-SDF-3250) ULA_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+ModelSim-Altera Error: # ** Error: (vsim-SDF-3894) : Errors occured in reading and resolving instances from compiled SDF file(s).
+ModelSim-Altera Error: # ** Error: (vsim-SDF-3250) ULA_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+ModelSim-Altera Info: # Error loading design
+ModelSim-Altera Info: # Error: Error loading design 
+ModelSim-Altera Info: #        Pausing macro execution 
+ModelSim-Altera Info: # MACRO ./ULA_run_msim_gate_vhdl.do PAUSED at line 12
+ModelSim-Altera Info: vsim work.testbench_tp2
+ModelSim-Altera Info: # vsim work.testbench_tp2 
+ModelSim-Altera Info: # Loading std.standard
+ModelSim-Altera Info: # Loading std.textio(body)
+ModelSim-Altera Info: # Loading ieee.std_logic_1164(body)
+ModelSim-Altera Info: # Loading ieee.numeric_std(body)
+ModelSim-Altera Info: # Loading ieee.std_logic_textio(body)
+ModelSim-Altera Info: # Loading work.testbench_tp2(comp)
+ModelSim-Altera Info: # Loading ieee.vital_timing(body)
+ModelSim-Altera Info: # Loading ieee.vital_primitives(body)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_atom_pack(body)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_components
+ModelSim-Altera Info: # Loading work.tp1(structure)
+ModelSim-Altera Info: # ** Failure: (vsim-3807) Types do not match between component and entity for port "s_low".
+ModelSim-Altera Info: #    Time: 0 ps  Iteration: 0  Instance: /testbench_tp2/DUT File: ULA.vho Line: 39
+ModelSim-Altera Info: # ** Failure: (vsim-3807) Types do not match between component and entity for port "s_high".
+ModelSim-Altera Info: #    Time: 0 ps  Iteration: 0  Instance: /testbench_tp2/DUT File: ULA.vho Line: 40
+ModelSim-Altera Warning: # ** Warning: (vsim-8713) /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd(30): Suspect default binding for component instance 'DUT'.
+ModelSim-Altera Info: #    Entity has no generics at all; the component has generic:
+ModelSim-Altera Info: #           N
+ModelSim-Altera Info: #         Region: /testbench_tp2/DUT
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_io(structure)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_mux21(altvital)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_dffe(behave)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_asynch_io(behave)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_ena_reg(behave)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_and1(altvital)
+ModelSim-Altera Info: # Fatal error at ULA.vho line 40
+ModelSim-Altera Info: #  while elaborating region: /testbench_tp2/DUT
+ModelSim-Altera Info: # Fatal error in file /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd
+ModelSim-Altera Info: #  while elaborating region: /testbench_tp2
+ModelSim-Altera Info: # Error loading design
+ModelSim-Altera Info: # Error: Error loading design 
+ModelSim-Altera Info: #        Pausing macro execution 
+ModelSim-Altera Info: # MACRO ./ULA_run_msim_gate_vhdl.do PAUSED at line 12
+Error: Errors encountered while running modelsim do file
+Error: NativeLink simulation flow was NOT successful
+
+
+
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  1
+Nativelink TCL script failed with errorInfo:  1
+    (procedure "launch_sim" line 1)
+    invoked from within
+"launch_sim launch_args_hash"
+    ("eval" body line 1)
+    invoked from within
+"eval launch_sim launch_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+				set savedCode $::errorCode
+				set savedInfo $::errorInfo
+				error $result $savedInfo $savedCode
+			} else {
+			..."
+    invoked from within
+"if [catch {eval launch_sim launch_args_hash} result ] {
+			set status 1
+			if [ info exists ::errorCode ] {
+				set savedCode $::errorCode
+				set sav..."
+    (procedure "run_sim" line 78)
+    invoked from within
+"run_sim run_sim_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+			set savedCode $::errorCode
+			set savedInfo $::errorInfo
+			error "$result" $savedInfo $savedCode
+		} else {
+			er..."
+    (procedure "run_eda_simulation_tool" line 330)
+    invoked from within
+"run_eda_simulation_tool eda_opts_hash"

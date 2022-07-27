@@ -1,5 +1,16 @@
 
-State Machine - |bc|state
+State Machine - |TP1|TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state
+Name state.PRONTO state.SOMA state.SET_N state.TESTA_MOUI state.SET_VAR state.CHECK_ENTRADA state.ERRO state.ZERADO 
+state.ZERADO 0 0 0 0 0 0 0 0 
+state.ERRO 0 0 0 0 0 0 1 1 
+state.CHECK_ENTRADA 0 0 0 0 0 1 0 1 
+state.SET_VAR 0 0 0 0 1 0 0 1 
+state.TESTA_MOUI 0 0 0 1 0 0 0 1 
+state.SET_N 0 0 1 0 0 0 0 1 
+state.SOMA 0 1 0 0 0 0 0 1 
+state.PRONTO 1 0 0 0 0 0 0 1 
+
+State Machine - |TP1|TP1_bc:bc0|state
 Name state.carrega_saida state.calcula state.carrega_B state.carrega_A state.carrega_OP state.reset 
 state.reset 0 0 0 0 0 0 
 state.carrega_OP 0 0 0 0 1 1 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA
-Sat Jul 23 15:53:00 2022
+Wed Jul 27 10:16:49 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,11 +13,31 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |bc|state
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. State Machine - |TP1|TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state
+  9. State Machine - |TP1|TP1_bc:bc0|state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |TP1
+ 15. Parameter Settings for User Entity Instance: TP1_bo:bo0
+ 16. Parameter Settings for User Entity Instance: TP1_bo:bo0|memROM:mem
+ 17. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regA
+ 18. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regB
+ 19. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador_unsigned:regOp
+ 20. Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0
+ 21. Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|somadorsubtrator:somasub0
+ 22. Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0
+ 23. Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc
+ 24. Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo
+ 25. Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|booth_multiplier_8bits:booth0
+ 26. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regS_low
+ 27. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regS_high
+ 28. Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador_unsigned:regflag_z_n_ovf
+ 29. Port Connectivity Checks: "TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0"
+ 30. Port Connectivity Checks: "TP1_bo:bo0|ula:ula0"
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +63,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 23 15:53:00 2022           ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 27 10:16:49 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; ULA                                             ;
-; Top-level Entity Name              ; bc                                              ;
+; Top-level Entity Name              ; TP1                                             ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 12                                              ;
-;     Total combinational functions  ; 12                                              ;
-;     Dedicated logic registers      ; 6                                               ;
-; Total registers                    ; 6                                               ;
-; Total pins                         ; 12                                              ;
+; Total logic elements               ; 365                                             ;
+;     Total combinational functions  ; 351                                             ;
+;     Dedicated logic registers      ; 50                                              ;
+; Total registers                    ; 50                                              ;
+; Total pins                         ; 32                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -66,7 +86,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C5F256C6        ;                    ;
-; Top-level entity name                                                      ; bc                 ; ULA                ;
+; Top-level entity name                                                      ; TP1                ; ULA                ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -156,13 +176,25 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                          ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
-; bc.vhd                           ; yes             ; User VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/bc.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------+---------+
+; TP1.vhd                          ; yes             ; User VHDL File        ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/TP1.vhd                    ;         ;
+; TP1_bc.vhd                       ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/TP1_bc.vhd                 ;         ;
+; TP1_bo.vhd                       ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/TP1_bo.vhd                 ;         ;
+; reg_incremental.vhd              ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/reg_incremental.vhd        ;         ;
+; memROM.vhd                       ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/memROM.vhd                 ;         ;
+; registrador.vhd                  ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/registrador.vhd            ;         ;
+; registrador_unsigned.vhd         ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/registrador_unsigned.vhd   ;         ;
+; ula.vhd                          ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/ula.vhd                    ;         ;
+; somadorsubtrator.vhd             ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/somadorsubtrator.vhd       ;         ;
+; raiz_quadrada.vhd                ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/raiz_quadrada.vhd          ;         ;
+; raiz_quadrada_bc.vhd             ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/raiz_quadrada_bc.vhd       ;         ;
+; raiz_quadrada_bo.vhd             ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/raiz_quadrada_bo.vhd       ;         ;
+; booth_multiplier_8bits.vhd       ; yes             ; Auto-Found VHDL File  ; /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/booth_multiplier_8bits.vhd ;         ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -170,44 +202,74 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 12    ;
+; Estimated Total logic elements              ; 365   ;
 ;                                             ;       ;
-; Total combinational functions               ; 12    ;
+; Total combinational functions               ; 351   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 4     ;
-;     -- 3 input functions                    ; 5     ;
-;     -- <=2 input functions                  ; 3     ;
+;     -- 4 input functions                    ; 177   ;
+;     -- 3 input functions                    ; 133   ;
+;     -- <=2 input functions                  ; 41    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 12    ;
-;     -- arithmetic mode                      ; 0     ;
+;     -- normal mode                          ; 235   ;
+;     -- arithmetic mode                      ; 116   ;
 ;                                             ;       ;
-; Total registers                             ; 6     ;
-;     -- Dedicated logic registers            ; 6     ;
+; Total registers                             ; 50    ;
+;     -- Dedicated logic registers            ; 50    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 12    ;
+; I/O pins                                    ; 32    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 6     ;
-; Total fan-out                               ; 60    ;
-; Average fan-out                             ; 2.00  ;
+; Maximum fan-out                             ; 50    ;
+; Total fan-out                               ; 1369  ;
+; Average fan-out                             ; 3.16  ;
 +---------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |bc                        ; 12 (12)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |bc                 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                              ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
+; |TP1                                         ; 351 (0)           ; 50 (0)       ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |TP1                                                   ; work         ;
+;    |TP1_bc:bc0|                              ; 14 (14)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bc:bc0                                        ; work         ;
+;    |TP1_bo:bo0|                              ; 337 (0)           ; 44 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0                                        ; work         ;
+;       |memROM:mem|                           ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|memROM:mem                             ; work         ;
+;       |reg_incremental:regPC|                ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|reg_incremental:regPC                  ; work         ;
+;       |registrador:regA|                     ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador:regA                       ; work         ;
+;       |registrador:regB|                     ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador:regB                       ; work         ;
+;       |registrador:regS_high|                ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador:regS_high                  ; work         ;
+;       |registrador:regS_low|                 ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador:regS_low                   ; work         ;
+;       |registrador_unsigned:regOp|           ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador_unsigned:regOp             ; work         ;
+;       |registrador_unsigned:regflag_z_n_ovf| ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|registrador_unsigned:regflag_z_n_ovf   ; work         ;
+;       |ula:ula0|                             ; 312 (83)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|ula:ula0                               ; work         ;
+;          |booth_multiplier_8bits:booth0|     ; 212 (212)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|ula:ula0|booth_multiplier_8bits:booth0 ; work         ;
+;          |somadorsubtrator:somasub0|         ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TP1|TP1_bo:bo0|ula:ula0|somadorsubtrator:somasub0     ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TP1|TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state                                                             ;
++---------------------+--------------+------------+-------------+------------------+---------------+---------------------+------------+--------------+
+; Name                ; state.PRONTO ; state.SOMA ; state.SET_N ; state.TESTA_MOUI ; state.SET_VAR ; state.CHECK_ENTRADA ; state.ERRO ; state.ZERADO ;
++---------------------+--------------+------------+-------------+------------------+---------------+---------------------+------------+--------------+
+; state.ZERADO        ; 0            ; 0          ; 0           ; 0                ; 0             ; 0                   ; 0          ; 0            ;
+; state.ERRO          ; 0            ; 0          ; 0           ; 0                ; 0             ; 0                   ; 1          ; 1            ;
+; state.CHECK_ENTRADA ; 0            ; 0          ; 0           ; 0                ; 0             ; 1                   ; 0          ; 1            ;
+; state.SET_VAR       ; 0            ; 0          ; 0           ; 0                ; 1             ; 0                   ; 0          ; 1            ;
+; state.TESTA_MOUI    ; 0            ; 0          ; 0           ; 1                ; 0             ; 0                   ; 0          ; 1            ;
+; state.SET_N         ; 0            ; 0          ; 1           ; 0                ; 0             ; 0                   ; 0          ; 1            ;
+; state.SOMA          ; 0            ; 1          ; 0           ; 0                ; 0             ; 0                   ; 0          ; 1            ;
+; state.PRONTO        ; 1            ; 0          ; 0           ; 0                ; 0             ; 0                   ; 0          ; 1            ;
++---------------------+--------------+------------+-------------+------------------+---------------+---------------------+------------+--------------+
+
+
+Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |bc|state                                                                                                      ;
+; State Machine - |TP1|TP1_bc:bc0|state                                                                                          ;
 +---------------------+---------------------+---------------+-----------------+-----------------+------------------+-------------+
 ; Name                ; state.carrega_saida ; state.calcula ; state.carrega_B ; state.carrega_A ; state.carrega_OP ; state.reset ;
 +---------------------+---------------------+---------------+-----------------+-----------------+------------------+-------------+
@@ -220,28 +282,254 @@ Encoding Type:  One-Hot
 +---------------------+---------------------+---------------+-----------------+-----------------+------------------+-------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                       ;
++---------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                   ; Reason for Removal                     ;
++---------------------------------------------------------------------------------+----------------------------------------+
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo|resultado[0]        ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo|erro                ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo|resultado[1..7]     ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo|pronto              ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo|s_soma[0..7]        ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo|s_2n[0..7]          ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo|s_n[0..7]           ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|registrador_unsigned:regflag_z_n_ovf|q[0]                            ; Stuck at GND due to stuck port data_in ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.ZERADO        ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.ERRO          ; Lost fanout                            ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.PRONTO        ; Lost fanout                            ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.CHECK_ENTRADA ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.SET_VAR       ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.TESTA_MOUI    ; Stuck at GND due to stuck port clock   ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.SOMA          ; Lost fanout                            ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.SET_N         ; Lost fanout                            ;
+; TP1_bo:bo0|reg_incremental:regPC|soma[5..31]                                    ; Lost fanout                            ;
+; Total Number of Removed Registers = 70                                          ;                                        ;
++---------------------------------------------------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                               ;
++---------------------------------------------------------------------------------+-------------------------+-------------------------------------------------------------------------------+
+; Register name                                                                   ; Reason for Removal      ; Registers Removed due to This Register                                        ;
++---------------------------------------------------------------------------------+-------------------------+-------------------------------------------------------------------------------+
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.CHECK_ENTRADA ; Stuck at GND            ; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.SET_VAR,    ;
+;                                                                                 ; due to stuck port clock ; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.TESTA_MOUI, ;
+;                                                                                 ;                         ; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.SOMA,       ;
+;                                                                                 ;                         ; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.SET_N       ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.ZERADO        ; Stuck at GND            ; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.ERRO,       ;
+;                                                                                 ; due to stuck port clock ; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc|state.PRONTO      ;
+; TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo|erro                ; Stuck at GND            ; TP1_bo:bo0|registrador_unsigned:regflag_z_n_ovf|q[0]                          ;
+;                                                                                 ; due to stuck port clock ;                                                                               ;
++---------------------------------------------------------------------------------+-------------------------+-------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 6     ;
+; Total registers                              ; 50    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Clear ; 11    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 43    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |bc|state                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|somadorsubtrator:somasub0|Add0        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|booth_multiplier_8bits:booth0|p2[10]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|booth_multiplier_8bits:booth0|p3[10]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|booth_multiplier_8bits:booth0|p4[10]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|booth_multiplier_8bits:booth0|p5[10]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|booth_multiplier_8bits:booth0|p6[15]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|booth_multiplier_8bits:booth0|p7s[15] ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 28 LEs               ; 42 LEs                 ; No         ; |TP1|TP1_bo:bo0|ula:ula0|Mux2                                  ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TP1|TP1_bo:bo0|ula:ula0|s_high[3]                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |TP1 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; N              ; 8     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 8     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|memROM:mem ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; addr_width     ; 32    ; Signed Integer                            ;
+; addr_bits      ; 5     ; Signed Integer                            ;
+; data_width     ; 8     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regA ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 8     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regB ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 8     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador_unsigned:regOp ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 8     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|somadorsubtrator:somasub0 ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|ula:ula0|booth_multiplier_8bits:booth0 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regS_low ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador:regS_high ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TP1_bo:bo0|registrador_unsigned:regflag_z_n_ovf ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; n              ; 4     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0"                                                                         ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; reset        ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; erro_state   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; sinal_soma   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; sinal_set    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; resultado_2n ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; resultado_n  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; parcial      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "TP1_bo:bo0|ula:ula0"                                                                                                                         ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clock ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -249,7 +537,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -259,26 +547,96 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jul 23 15:52:58 2022
+    Info: Processing started: Wed Jul 27 10:16:47 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA -c ULA
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12019): Can't analyze file -- file ULA/memoria_rom.vhd is missing
 Info (12021): Found 1 design units, including 1 entities, in source file raiz_q.vhd
     Info (12023): Found entity 1: raiz_q
 Warning (12019): Can't analyze file -- file bc_ULA.vhd is missing
-Info (12021): Found 2 design units, including 1 entities, in source file bc.vhd
-    Info (12022): Found design unit 1: bc-estrutura
-    Info (12023): Found entity 1: bc
-Info (12127): Elaborating entity "bc" for the top level hierarchy
+Warning (12019): Can't analyze file -- file bc.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file TP1.vhd
+    Info (12022): Found design unit 1: TP1-estrutura
+    Info (12023): Found entity 1: TP1
+Info (12021): Found 2 design units, including 1 entities, in source file testbench_TP2.vhd
+    Info (12022): Found design unit 1: testbench_TP2-comp
+    Info (12023): Found entity 1: testbench_TP2
+Info (12127): Elaborating entity "TP1" for the top level hierarchy
+Warning (12125): Using design file TP1_bc.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: TP1_bc-estrutura
+    Info (12023): Found entity 1: TP1_bc
+Info (12128): Elaborating entity "TP1_bc" for hierarchy "TP1_bc:bc0"
+Warning (12125): Using design file TP1_bo.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: TP1_bo-estrutura
+    Info (12023): Found entity 1: TP1_bo
+Info (12128): Elaborating entity "TP1_bo" for hierarchy "TP1_bo:bo0"
+Warning (12125): Using design file reg_incremental.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: reg_incremental-Behavior
+    Info (12023): Found entity 1: reg_incremental
+Info (12128): Elaborating entity "reg_incremental" for hierarchy "TP1_bo:bo0|reg_incremental:regPC"
+Warning (10492): VHDL Process Statement warning at reg_incremental.vhd(24): signal "soma" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file memROM.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: memROM-arch
+    Info (12023): Found entity 1: memROM
+Info (12128): Elaborating entity "memROM" for hierarchy "TP1_bo:bo0|memROM:mem"
+Warning (12125): Using design file registrador.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: registrador-estrutura
+    Info (12023): Found entity 1: registrador
+Info (12128): Elaborating entity "registrador" for hierarchy "TP1_bo:bo0|registrador:regA"
+Warning (10492): VHDL Process Statement warning at registrador.vhd(16): signal "carga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file registrador_unsigned.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: registrador_unsigned-estrutura
+    Info (12023): Found entity 1: registrador_unsigned
+Info (12128): Elaborating entity "registrador_unsigned" for hierarchy "TP1_bo:bo0|registrador_unsigned:regOp"
+Warning (10492): VHDL Process Statement warning at registrador_unsigned.vhd(16): signal "carga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file ula.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: ula-arch
+    Info (12023): Found entity 1: ula
+Info (12128): Elaborating entity "ula" for hierarchy "TP1_bo:bo0|ula:ula0"
+Warning (10036): Verilog HDL or VHDL warning at ula.vhd(22): object "a_temp" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at ula.vhd(22): object "b_temp" assigned a value but never read
+Warning (10540): VHDL Signal Declaration warning at ula.vhd(24): used explicit default value for signal "tudo_zero" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at ula.vhd(26): used explicit default value for signal "um" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at ula.vhd(27): used explicit default value for signal "nulo" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at ula.vhd(95): signal "pronto_s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file somadorsubtrator.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: somadorsubtrator-estrutura
+    Info (12023): Found entity 1: somadorsubtrator
+Info (12128): Elaborating entity "somadorsubtrator" for hierarchy "TP1_bo:bo0|ula:ula0|somadorsubtrator:somasub0"
+Warning (12125): Using design file raiz_quadrada.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: raiz_quadrada-arch
+    Info (12023): Found entity 1: raiz_quadrada
+Info (12128): Elaborating entity "raiz_quadrada" for hierarchy "TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0"
+Warning (12125): Using design file raiz_quadrada_bc.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: raiz_quadrada_bc-behavior
+    Info (12023): Found entity 1: raiz_quadrada_bc
+Info (12128): Elaborating entity "raiz_quadrada_bc" for hierarchy "TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bc:bc"
+Warning (12125): Using design file raiz_quadrada_bo.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: raiz_quadrada_bo-arch
+    Info (12023): Found entity 1: raiz_quadrada_bo
+Info (12128): Elaborating entity "raiz_quadrada_bo" for hierarchy "TP1_bo:bo0|ula:ula0|raiz_quadrada:raiz0|raiz_quadrada_bo:bo"
+Warning (10540): VHDL Signal Declaration warning at raiz_quadrada_bo.vhd(29): used explicit default value for signal "tudo_zero_2" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at raiz_quadrada_bo.vhd(30): used explicit default value for signal "tudo_zero" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at raiz_quadrada_bo.vhd(61): signal "s_soma" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file booth_multiplier_8bits.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: booth_multiplier_8bits-arch
+    Info (12023): Found entity 1: booth_multiplier_8bits
+Info (12128): Elaborating entity "booth_multiplier_8bits" for hierarchy "TP1_bo:bo0|ula:ula0|booth_multiplier_8bits:booth0"
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "TP1_bo:bo0|memROM:mem|rom" is uninferred due to inappropriate RAM size
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "flagError" is stuck at GND
+Info (17049): 31 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 24 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 12 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 624 megabytes
-    Info: Processing ended: Sat Jul 23 15:53:00 2022
+Info (21057): Implemented 420 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 388 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 614 megabytes
+    Info: Processing ended: Wed Jul 27 10:16:49 2022
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

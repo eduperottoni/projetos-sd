@@ -1,0 +1,87 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/simulation/modelsim
+Etestbench_tp2
+Z1 w1658927562
+Z2 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
+Z3 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 d/home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/simulation/modelsim
+Z7 8/home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd
+Z8 F/home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd
+l0
+L7
+V4Ggi`>IYClS2_o9VK2I?m1
+!s100 diJ@[W;Nz_h_H;Sn9LUGn1
+Z9 OV;C;10.1d;51
+31
+!i10b 1
+Z10 !s108 1658927586.037477
+Z11 !s90 -reportprogress|300|-93|-work|work|/home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd|
+Z12 !s107 /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+Acomp
+R2
+R3
+R4
+R5
+DEx4 work 13 testbench_tp2 0 22 4Ggi`>IYClS2_o9VK2I?m1
+l29
+L11
+VSzJ98DJ;5Ld8:BI1A1[lK1
+!s100 kb`gGMZSbIlLXj03;lz@81
+R9
+31
+!i10b 1
+R10
+R11
+R12
+R13
+R14
+Etp1
+Z15 w1658927582
+Z16 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
+Z17 DPx9 cycloneii 19 cycloneii_atom_pack 0 22 zUjlM<IUJVWSWg:L2<>ic3
+Z18 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
+R4
+R5
+Z19 DPx9 cycloneii 20 cycloneii_components 0 22 h@gSJ;Al32oYg[7^PbnAR0
+R6
+Z20 8ULA.vho
+Z21 FULA.vho
+l0
+L34
+VRh5jlh0H7hSo_n0NF:K;;3
+R9
+31
+Z22 !s108 1658927585.942331
+Z23 !s90 -reportprogress|300|-93|-work|work|ULA.vho|
+Z24 !s107 ULA.vho|
+R13
+R14
+!s100 ?l;JnLF6NbF8^YRCdzd:f0
+!i10b 1
+Astructure
+R16
+R17
+R18
+R4
+R5
+R19
+DEx4 work 3 tp1 0 22 Rh5jlh0H7hSo_n0NF:K;;3
+l604
+L89
+VbaLX8i55>i^>]NCHF?4@V3
+R9
+31
+R22
+R23
+R24
+R13
+R14
+!s100 =f^iY3g7<YWf=O[OESJ:Y3
+!i10b 1

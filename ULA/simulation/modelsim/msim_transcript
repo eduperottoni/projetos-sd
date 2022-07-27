@@ -1,0 +1,116 @@
+# do ULA_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying /home/fernanda/quartus/modelsim_ase/linux/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /home/fernanda/quartus/modelsim_ase/linux/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {ULA.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity TP1
+# -- Compiling architecture structure of TP1
+# 
+# vcom -93 -work work {/home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Compiling entity testbench_TP2
+# -- Compiling architecture comp of testbench_TP2
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /NA=ULA_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  testbench_TP2
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /NA=ULA_vhd.sdo -t 1ps testbench_TP2 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench_tp2(comp)
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.tp1(structure)
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "s_low".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_tp2/DUT File: ULA.vho Line: 39
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "s_high".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_tp2/DUT File: ULA.vho Line: 40
+# ** Warning: (vsim-8713) /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd(30): Suspect default binding for component instance 'DUT'.
+#    Entity has no generics at all; the component has generic:
+#           N
+#         Region: /testbench_tp2/DUT
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Fatal error at ULA.vho line 40
+#  while elaborating region: /testbench_tp2/DUT
+# Fatal error in file /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd
+#  while elaborating region: /testbench_tp2
+# Loading instances from ULA_vhd.sdo
+# ** Error: (vsim-SDF-3250) ULA_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+# ** Error: (vsim-SDF-3894) : Errors occured in reading and resolving instances from compiled SDF file(s).
+# ** Error: (vsim-SDF-3250) ULA_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./ULA_run_msim_gate_vhdl.do PAUSED at line 12
+vsim work.testbench_tp2
+# vsim work.testbench_tp2 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.testbench_tp2(comp)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.tp1(structure)
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "s_low".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_tp2/DUT File: ULA.vho Line: 39
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "s_high".
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_tp2/DUT File: ULA.vho Line: 40
+# ** Warning: (vsim-8713) /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd(30): Suspect default binding for component instance 'DUT'.
+#    Entity has no generics at all; the component has generic:
+#           N
+#         Region: /testbench_tp2/DUT
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Fatal error at ULA.vho line 40
+#  while elaborating region: /testbench_tp2/DUT
+# Fatal error in file /home/fernanda/SistemasDigitais/grupo01/projetos-sd/ULA/testbench_TP2.vhd
+#  while elaborating region: /testbench_tp2
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./ULA_run_msim_gate_vhdl.do PAUSED at line 12
