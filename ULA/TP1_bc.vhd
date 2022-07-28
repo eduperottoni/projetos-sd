@@ -4,14 +4,17 @@ USE ieee.std_logic_1164.all;
 ENTITY TP1_bc IS
 PORT (rst, clk, inicio: IN STD_LOGIC;
       op_code: IN STD_LOGIC_VECTOR(3 downto 0);
-		pronto: IN STD_LOGIC;
+		pronto, pronto_raiz: IN STD_LOGIC;
       en_PC, en_A, en_B, en_op, en_out, reset_PC, calcular: OUT STD_LOGIC );
 END TP1_bc;
 
 ARCHITECTURE estrutura OF TP1_bc IS
 	TYPE state_type IS (reset, carrega_OP, carrega_A, carrega_B, calcula, carrega_saida);
-	SIGNAL state: state_type;
+	SIGNAL state, estado_anterior: state_type;
+	SIGNAL opcode_s : std_LOGIC_VECTOR(3 downto 0);
 BEGIN
+
+	--Lógica de póximo estado
 	PROCESS (clk, rst)
 	BEGIN
 		if(rst = '1') THEN
@@ -21,6 +24,7 @@ BEGIN
 				CASE state IS
 					WHEN reset =>
 						if inicio = '1' then
+							estado_anterior <= reset;
 							state <= carrega_OP;
 						else 
 							state <= reset;
@@ -28,7 +32,7 @@ BEGIN
 
 					WHEN carrega_OP =>
 						IF op_code = "0000" THEN
-							state <= carrega_OP;
+							state <= reset;
 						ELSIF op_code = "1111" THEN
 							state <= reset;
 						ELSE
@@ -36,6 +40,7 @@ BEGIN
 						END IF;
 
 					WHEN carrega_A =>
+						estado_anterior <= carrega_OP;
 						IF op_code = "0011" or op_code = "0100" or op_code = "0101" or op_code = "1010" THEN
 							state <= calcula;
 						ELSE
@@ -46,7 +51,7 @@ BEGIN
 						state <= calcula;
 
 					WHEN calcula =>
-						IF pronto = '1' THEN
+						IF (pronto = '1' and op_code /= "1010") or (pronto_raiz = '1') THEN
 							state <= carrega_saida;
 						ELSE
 							state <= calcula;
@@ -74,7 +79,7 @@ BEGIN
 				calcular <= '0';
 
 
-			WHEN carrega_OP =>
+			WHEN carrega_OP => 
 				en_PC <= '1';
 				en_A <= '0';
 				en_B <= '0';

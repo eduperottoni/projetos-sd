@@ -9,8 +9,7 @@ library ieee;
           data_width : integer := 8 -- quantidade de bits do elemento
           );
   port(
-		addr : in integer;
-      --addr : in std_logic_vector(addr_bits-1 downto 0);
+      addr : in unsigned(addr_bits-1 downto 0);
       data : out signed(data_width-1 downto 0)
   );
   end memROM;
@@ -19,8 +18,8 @@ library ieee;
       type rom_type is array (0 to addr_width-1) of signed(data_width-1 downto 0);
       
       signal rom : rom_type := (
-                              "00000001", -- op A+B (62 = 00111110)
-                              "00110011", -- A (50)
+                              "00000001", -- op A+B (63 = 00111111)
+                              "00110011", -- A ()
                               "00001100", -- B (12)
 										
 										"00000010", -- op A - B (-38 = 11011010) COM SINAL
@@ -30,7 +29,7 @@ library ieee;
                               "00000011", -- op A++ (31 = 00011111)
                               "00011110", -- A
 										
-										"00000011", -- op A-- 
+										"00000100", -- op A-- 
                               "00000010", -- A
 										
 										"00000101", -- op not A ( 201 = 11001001)
@@ -53,12 +52,12 @@ library ieee;
                               "00001100", -- B (12)
 																				                             									
                               "00001010", -- op sqrt (6 = 00000110)
-                              "00000100", -- A (4)
+                              "00100100", -- A (36)
 										
 										"00001010", -- op sqrt (5 = 00000101)
                               "00011101", -- A (29)
 											
-                              "00000011", -- op sqrt (11 = 00001011)
+                              "00000011", -- op A++ (128 = 10000000)
                               "01111111", -- A (127)
 										
 										"00000000", -- op noOperation
@@ -66,6 +65,5 @@ library ieee;
                               "00001111"  -- HALT
           );
   begin	
-		data <= rom(addr);
-      --data <= rom(to_integer(unsigned(addr)));
+      data <= rom(to_integer(unsigned(addr)));
   end arch;

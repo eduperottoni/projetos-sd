@@ -11,36 +11,36 @@ end testbench_TP2;
 architecture comp of testbench_TP2 is
 signal s_low, s_high: std_logic_vector(7 downto 0);
 signal inicio, reset, pronto: std_logic;
-signal clk: std_logic := '0';
-signal flagZ, flagOvf, flagN, flagError,enable_PC, ENABLE_A, enable_b, enable_op, calcular_sinal: std_logic;
+signal clock: std_logic;
+signal flagZ, flagOvf, flagN, flagError: std_logic;
 constant clk_period : time := 10 ns;
 
 file output_buf : text open write_mode is "saidas.txt"; 
-constant num_of_clocks : integer := 65;
+constant num_of_clocks : integer := 100;
 signal i : integer := 0;
 
 component TP1 is
 	generic (N : natural := 8);
 	PORT (clk, inicio, reset : IN STD_LOGIC;
    s_low, s_high: OUT std_logic_vector (N-1 DOWNTO 0);
-   flagZ, flagOvf, flagN, flagError, enable_PC, ENABLE_A, enable_b, enable_op, calcular_sinal: OUT std_logic);
+   flagZ, flagOvf, flagN, flagError: OUT std_logic);
 end component;
 
 begin
-	DUT: TP1 generic map (8) port map(clk, inicio, reset, s_low, s_high, flagZ, flagOvf, flagN, flagError, enable_PC, ENABLE_A, enable_b, enable_op, calcular_sinal);
+	DUT: TP1 generic map (8) port map(clock, inicio, reset, s_low, s_high, flagZ, flagOvf, flagN, flagError);
 	process
 		begin
 			reset <= '1';
-				wait for 15 ns;
+			wait for clk_period;
 			reset <= '0'; inicio <= '1';
-				wait for 15 ns;
+			wait;
 	end process;	
 
-	clk_process :process
+	clk_process: process
    begin
-        clk <= '0';
+        clock <= '0';
         wait for clk_period/2;
-        clk <= '1';
+        clock <= '1';
         wait for clk_period/2;
 		  
 		  if (i = num_of_clocks) then
@@ -51,7 +51,7 @@ begin
         end if;
    end process;
 	
-	file_io: process(s_low)
+	file_io: process(s_low, s_high)
 			variable write_col_to_output_buf : line;
       begin 
 			write(write_col_to_output_buf, std_logic_vector(signed(s_high)));

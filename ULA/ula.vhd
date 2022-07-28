@@ -12,7 +12,7 @@ entity ula is
 		s_low: out signed(N-1 downto 0); 
 		s_high: out signed(N-1 downto 0);
 		flag_z_n_ovf_e: out std_logic_vector(3 downto 0);
-		pronto: out std_logic
+		pronto, pronto_raiz: out std_logic
 	);
 end ula;
 
@@ -63,7 +63,7 @@ begin
 	--RESULTADO DO MULTIPLICADOR
 	raiz0 : raiz_quadrada
 		generic map(n)
-		port map (a,clock,calcular,nulo,pronto_s,error,result_raiz);
+		port map (a,clock,calcular,nulo,pronto_raiz,error,result_raiz);
 	
 	booth0 : booth_multiplier_8bits 
 		generic map(N)
@@ -89,16 +89,6 @@ begin
 					  result_raiz(n-1 dowNTO 0) when "1010",
 					  signed(tudo_zero) when others;
 					  
-	process(op)
-	begin
-		if op = "1010" then
-			pronto <= pronto_s;
-		else
-			pronto <= '1';
-		end if;
-		--pronto <= pronto_s when op = "1010" else '1';
-	end process;
-					  
 	s_low <= s_low_temp;
 	s_high <= s_high_temp;
 				 
@@ -117,7 +107,7 @@ begin
 		
 	negative <= '1' when ((s_high_temp(N-1) = '1')) else '0';
 	
-	
+	pronto <= '1';
 	
 	flag_z_n_ovf_e <= zero&negative&overflow&error;
 

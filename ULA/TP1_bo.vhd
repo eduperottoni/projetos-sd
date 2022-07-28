@@ -7,17 +7,23 @@ generic (N : natural := 8 );
 PORT (clk : IN STD_LOGIC;
       enPC, enA, enB, enOp, enOut, resetPC, calcular : IN STD_LOGIC;
       s_low, s_high : OUT SIGNED (N-1 DOWNTO 0);
-      flagZ, flagN, flagOvf, flagError, pronto : OUT std_logic;
-		opcode: out std_logic_vector(3 downto 0)
+      flagZ, flagN, flagOvf, flagError, pronto, pronto_raiz: OUT std_logic;
+		opcode: out std_logic_vector(3 downto 0) := "0011"
 		);
 END TP1_bo;
 
 ARCHITECTURE estrutura OF TP1_bo IS
 
-	COMPONENT reg_incremental IS
-		PORT (Enable, Reset, Clock: IN STD_LOGIC ;
-		Q : OUT integer);
-	end COMPONENT ;
+
+	component reg_inc_unsined IS
+		 PORT (Enable, Reset, Clock: IN STD_LOGIC ;
+		 Q : OUT unsigned(4 downto 0));
+	end component ;
+	
+	--COMPONENT reg_incremental IS
+		--PORT (Enable, Reset, Clock: IN STD_LOGIC ;
+		--Q : OUT integer);
+	--end COMPONENT ;
 
 	COMPONENT memROM is
       generic(
@@ -26,7 +32,7 @@ ARCHITECTURE estrutura OF TP1_bo IS
           data_width : integer := 8 -- quantidade de bits do elemento
           );
 	  port(
-			addr : in integer;
+			addr : in unsigned(4 downto 0);
 			data : out signed(data_width-1 downto 0)
 	  );
   end COMPONENT;
@@ -63,7 +69,7 @@ ARCHITECTURE estrutura OF TP1_bo IS
 		s_low: out signed(N-1 downto 0); 
 		s_high: out signed(N-1 downto 0);
 		flag_z_n_ovf_e: out std_logic_vector(3 downto 0);
-		pronto: out std_logic
+		pronto, pronto_raiz: out std_logic
 		);
 	end component;
 
@@ -71,12 +77,13 @@ ARCHITECTURE estrutura OF TP1_bo IS
 SIGNAL s_regA, s_regB, s_regS_low, s_regS_high, s_low_ula, s_high_ula: SIGNED (N-1 DOWNTO 0);
 SIGNAL s_regOp: std_logic_vector(3 DOWNTO 0);
 SIGNAL flag_z_n_ovf_e, s_regFlagZNOvfe: std_logic_vector(3 downto 0);
-SIGNAL sairegPC: integer;
+SIGNAL sairegPC: unsigned(4 downto 0);
 SIGNAL dado: signed(7 downto 0);
+SIGNAL calcular_raiz: std_logic;
 
 BEGIN
 	--registrador PC incremental
-	regPC : reg_incremental PORT MAP (enPC, resetPC, clk, sairegPC);
+	regPC : reg_inc_unsined PORT MAP (enPC, resetPC, clk, sairegPC);
 	
 	--memoria ROM
 	mem: memROM PORT MAP(sairegPC, dado);
@@ -87,7 +94,8 @@ BEGIN
 	regOp: registrador_unsigned generic map(4) PORT MAP (clk, enOp, std_logic_vector(dado(3 downto 0)), s_regOp); 
 	
 	--ula (combinacional
-	ula0: ULA generic map(N) PORT MAP (s_regA, s_regB, std_logic_vector(s_regOp), calcular, clk, s_low_ula, s_high_ula, flag_z_n_ovf_e, pronto);
+	calcular_raiz <= calcular when std_logic_vector(s_regOp) = "1010" else '0';
+	ula0: ULA generic map(N) PORT MAP (s_regA, s_regB, std_logic_vector(s_regOp), calcular_raiz, clk, s_low_ula, s_high_ula, flag_z_n_ovf_e, pronto, pronto_raiz);
 	
 	--registradores de saída
 	regS_low: registrador_signed generic map(N) PORT MAP (clk, enOut, s_low_ula, s_regS_low);
